@@ -1,0 +1,12 @@
+
+.notification-menu {
+    padding: 0;
+
+    .notification-menu-label, .notification-menu-footer {
+        padding: calc(var(--mantine-spacing-xs) / 1.5) var(--mantine-spacing-sm)
+    }
+
+    .notification-menu-footer {
+        text-align: center;
+    }
+}

@@ -1,0 +1,33 @@
+
+@mixin notification-status ($bgColor) {
+    width: 8px;
+    height: 8px;
+    background-color: $bgColor;
+    border-radius: 50% 50%;
+    display: block;
+    align-self: center;
+}
+
+.notification-menu-item {
+    //background-color: var(--mantine-color-gray-light);
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    padding: calc(var(--mantine-spacing-xs) / 1.5) var(--mantine-spacing-sm);
+
+    /*&.read {
+        background-color: transparent;
+    }*/
+
+    &:hover {
+        background-color: var(--mantine-color-gray-light);
+    }
+
+    .read {
+        @include notification-status(var(--mantine-color-gray-6));
+    }
+
+    .unread {
+        @include notification-status(var(--mantine-color-pink-6));
+    }
+}

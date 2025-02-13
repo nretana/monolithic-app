@@ -1,0 +1,27 @@
+
+
+.single-menu-item {
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+    color: var(--mantine-color-text);
+    font-size: var(--mantine-font-size-sm);
+  
+    @include mantine.hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
+      color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
+    }
+
+    &[data-active] {
+      &,
+      &:hover {
+        background-color: var(--mantine-color-blue-light);
+        color: var(--mantine-color-blue-light-color);
+  
+        .linkIcon {
+          color: var(--mantine-color-blue-light-color);
+        }
+      }
+    }
+  }

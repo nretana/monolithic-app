@@ -1,0 +1,76 @@
+
+version: '3'
+
+services:
+
+  monoapp-container:
+    container_name: monoapp-container
+    build:
+      context: ../
+      dockerfile: build-config/Dockerfile
+    volumes:
+      - ${USERPROFILE}/docker-volumes/.keycloak/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ${USERPROFILE}/docker-volumes/.keycloak/nginx-certs/server:/etc/nginx/certs/
+      - ${USERPROFILE}/docker-volumes/.keycloak/nginx-certs/trusted:/usr/local/share/ca-certificates:ro
+    ports:
+      - 8086:80
+      - 443:443 
+    restart: always
+    depends_on:
+      - keycloak-container
+    networks:
+      - keycloak_network
+
+  postgres-container:
+    container_name: postgres-container
+    image: postgres:latest
+    volumes:
+      - ${USERPROFILE}/docker-volumes/.keycloak/postgresdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    restart: always
+    networks:
+      - keycloak_network
+
+  keycloak-container:
+    container_name: keycloak-container
+    image: quay.io/keycloak/keycloak:26.0.6
+    command: start
+    volumes:
+      - ${USERPROFILE}/docker-volumes/.keycloak/keycloak-certs/keycloak-server.crt:/opt/keycloak/conf/keycloak-server.crt
+      - ${USERPROFILE}/docker-volumes/.keycloak/keycloak-certs/keycloak-server.key:/opt/keycloak/conf/keycloak-server.key
+    environment:
+      KC_HOSTNAME: localhost
+      KC_HOSTNAME_PORT: 8080
+      KEYCLOAK_HTTPS_PORT: 8443
+      KC_HOSTNAME_STRICT_BACKCHANNEL: false
+      KC_HTTP_ENABLED: true
+      KC_HEALTH_ENABLED: true
+      KC_METRICS_ENABLED: true
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres-container:5432/${POSTGRES_DB}
+      KC_DB_USERNAME: ${KEYCLOAK_ADMIN}
+      KC_DB_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/keycloak-server.crt
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/keycloak-server.key
+      #KEYCLOAK_SSL_KEYSTORE_FILE: /etc/x509/https/keycloak.keystore
+      #KEYCLOAK_SSL_KEYSTORE_PASSWORD: mysecret
+    ports:
+      - 8084:8080
+      - 8443:8443
+    restart: always
+    depends_on:
+      - postgres-container
+    networks:
+      - keycloak_network
+
+networks:
+  keycloak_network:
+    name: keycloak_network
+    driver: bridge

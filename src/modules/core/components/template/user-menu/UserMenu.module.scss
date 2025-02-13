@@ -1,0 +1,15 @@
+
+
+/*.user-menu-target {
+    &:hover {
+        background-color: var(--mantine-color-default-hover);
+        border-radius: var(--mantine-radius-default);
+    }
+}*/
+
+.user-menu {
+    .icon {
+        width: var(--mantine-font-size-md);
+        height: var(--mantine-font-size-md);
+    }
+}

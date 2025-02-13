@@ -1,0 +1,2 @@
+
+export const ERROR_CODE_BAD_REQUEST = "ERR_BAD_REQUEST";
