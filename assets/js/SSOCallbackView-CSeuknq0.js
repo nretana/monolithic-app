@@ -1,0 +1,1 @@
+import{I as u,e as c,h as i,d as l,r as f,k as h,J as g,j as p,K as d}from"./index-KC4iKOQh.js";const S=()=>{const{user:s,error:t,isAuthenticated:a}=u(),e=c(),{signInSSOCallback:n}=i(),o=l(),r=e.get("authflow")||"";return f.useEffect(()=>{if(console.log(t),t){o(h.authenticatedEntryPath);return}a&&s&&r===g&&n(s)},[a,t]),p.jsx(d,{})};export{S as default};
