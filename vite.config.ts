@@ -13,6 +13,7 @@ export default defineConfig({
             }), 
             dynamicImport()
   ],
+  base: '/monolithic-app/',
   server: {
     port: 5175
   },
