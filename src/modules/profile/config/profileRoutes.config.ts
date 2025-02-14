@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { RouteTree } from '@/modules/core/@core-types/routes';
-import { PROFILE_KEY, PROFILE_PATH } from '../constants/profileRoutes.constants';
+import { PROFILE_KEY, PROFILE_PATH } from '../constants/profile.routes.constants';
 
 export const profileRoutes: RouteTree[] = [
     {

@@ -1,7 +1,7 @@
 import { SSO_API_URL, 
          AUTH_CLIENT_ID_PARAM,
          SSO_RESPONSE_TYPE_PARAM,
-         SSO_SCOPE_PARAM } from '@/modules/auth/constants/auth.api.constants';
+         SSO_SCOPE_PARAM } from '@/modules/auth/constants/auth.api.constant';
 
 export const ssoConfig = {
     authority: SSO_API_URL,

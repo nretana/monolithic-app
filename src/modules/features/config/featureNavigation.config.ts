@@ -1,14 +1,14 @@
 
 import { NavigationTree } from '@/modules/core/@core-types/navigation';
-import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constants';
-import { ADMIN, USER } from '@/modules/core/constants/roles.constants';
+import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constant';
+import { ADMIN, USER } from '@/modules/core/constants/roles.constant';
 import { FEATURES_PANEL_KEY,
          DASHBOARD_KEY,
          DASHBOARD_PATH,
          NOTIFICATIONS_KEY,
          NOTIFICATIONS_PATH,
          ORDERS_KEY,
-         ORDERS_PATH } from '@/modules/features/constants/featureRoutes.constants';
+         ORDERS_PATH } from '@/modules/features/constants/feature.routes.constant';
 import { IconLayoutGridAdd, IconListTree  } from '@tabler/icons-react';
 
 

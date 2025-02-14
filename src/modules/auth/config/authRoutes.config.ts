@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import { RouteTree } from '@/modules/core/@core-types/routes';
-import { SIGNIN_PATH, SIGNUP_PATH } from '@/modules/auth/constants/authRoutes.constants';
+import { SIGNIN_PATH, SIGNUP_PATH } from '@/modules/auth/constants/auth.routes.constant';
 
 export const authRoutes: RouteTree[] = [
     {

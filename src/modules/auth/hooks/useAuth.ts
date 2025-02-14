@@ -5,8 +5,8 @@ import type { JWUserToken, AuthResponse } from '@/modules/auth/@auth-types/auth'
 import type { SignInResponse } from '@/modules/auth/@auth-types/signinAuth';
 import type { UserInfo } from '@/modules/auth/@auth-types/userInfo';
 import appConfig from '@/modules/core/configs/app.config';
-import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constants';
-import { SSO_IDP_HINT_KEY, SSO_GOOGLE_IDP_HINT_PARAM, SSO_SIGN_IN_REDIRECT_URI } from '@/modules/auth/constants/auth.api.constants';
+import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constant';
+import { SSO_IDP_HINT_KEY, SSO_GOOGLE_IDP_HINT_PARAM, SSO_SIGN_IN_REDIRECT_URI } from '@/modules/auth/constants/auth.api.constant';
 import { useAuth as useOidc } from 'react-oidc-context';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '@/modules/core/store';

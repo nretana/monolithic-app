@@ -16,7 +16,7 @@ import {
     REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constants'
+import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constant'
 import rootReducer, { RootState, AsyncReducers } from './rootReducer'
 import RtkQueryService from './services/RtkQueryService'
 

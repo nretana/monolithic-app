@@ -1,12 +1,12 @@
 import { lazy } from 'react';
 import { RouteTree } from '@/modules/core/@core-types/routes';
-import { ADMIN, USER } from '@/modules/core/constants/roles.constants';
+import { ADMIN, USER } from '@/modules/core/constants/roles.constant';
 import { SSO_CALLBACK_KEY, 
          SSO_CALLBACK_PATH, 
          NOT_FOUND_KEY, 
          NOT_FOUND_PATH,
          INTERNAL_SERVER_ERROR_KEY,
-         INTERNAL_SERVER_ERROR_PATH } from '@/modules/core/constants/routes.constants';
+         INTERNAL_SERVER_ERROR_PATH } from '@/modules/core/constants/routes.constant';
          
 
 export const otherRoutes: RouteTree[] = [

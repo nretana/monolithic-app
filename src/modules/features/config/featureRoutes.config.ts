@@ -1,9 +1,9 @@
 import { lazy } from 'react';
 import { RouteTree } from '@/modules/core/@core-types/routes';
-import { ADMIN, USER } from '@/modules/core/constants/roles.constants';
+import { ADMIN, USER } from '@/modules/core/constants/roles.constant';
 import { DASHBOARD_KEY, DASHBOARD_PATH, 
          NOTIFICATIONS_KEY, NOTIFICATIONS_PATH,
-         ORDERS_KEY, ORDERS_PATH } from '@/modules/features/constants/featureRoutes.constants';
+         ORDERS_KEY, ORDERS_PATH } from '@/modules/features/constants/feature.routes.constant';
          
 
 export const featureRoutes: RouteTree[] = [

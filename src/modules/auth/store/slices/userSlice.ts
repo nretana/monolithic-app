@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UserInfo } from '@/modules/auth/@auth-types/userInfo';
-import { ADMIN } from '@/modules/core/constants/roles.constants';
+import { ADMIN } from '@/modules/core/constants/roles.constant';
 
 export type UserState = UserInfo;
 

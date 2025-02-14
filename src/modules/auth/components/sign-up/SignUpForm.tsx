@@ -5,7 +5,7 @@ import { useDisclosure } from '@mantine/hooks';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import useQuery from '@/modules/core/hooks/useQuery';
 import { useForm, yupResolver } from '@mantine/form';
-import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constants';
+import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constant';
 import appConfig from '@/modules/core/configs/app.config';
 import { Anchor, Box, Button, Divider, PasswordInput, Text, TextInput } from '@mantine/core';
 import Alert from '@/modules/core/components/shared/alert/Alert';

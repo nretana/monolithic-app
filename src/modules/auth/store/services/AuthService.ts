@@ -11,11 +11,11 @@ import { AUTH_API_BASE_URL,
          AUTH_CLIENT_ID_KEY,
          AUTH_REFRESH_TOKEN_KEY, 
          AUTH_CLIENT_ID_PARAM, 
-         AUTH_PASSWORD_GRANT_TYPE_PARAM } from '@/modules/auth/constants/auth.api.constants';
-import { ERROR_CODE_BAD_REQUEST } from '@/modules/auth/constants/auth.errorcodes.constants';
-import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constants';
+         AUTH_PASSWORD_GRANT_TYPE_PARAM } from '@/modules/auth/constants/auth.api.constant';
+import { ERROR_CODE_BAD_REQUEST } from '@/modules/auth/constants/auth.errorcodes.constant';
+import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constant';
 import { ERROR_MESSAGE_INVALID_CREDENTIALS, 
-         ERROR_MESSAGE_INVALID_TOKEN } from '@/modules/auth/constants/auth.errormessages.constants';
+         ERROR_MESSAGE_INVALID_TOKEN } from '@/modules/auth/constants/auth.errormessages.constant';
 import BaseService from '@/modules/core/store/services/BaseService';
 
 

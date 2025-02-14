@@ -8,10 +8,10 @@ import { yupResolver } from '@mantine/form';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import useQuery from '@/modules/core/hooks/useQuery';
-import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constants';
+import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constant';
 import appConfig from '@/modules/core/configs/app.config';
 import { SSO_GOOGLE_IDP_HINT_PARAM,
-         SSO_GITHUB_IDP_HINT_PARAM } from '@/modules/auth/constants/auth.api.constants';
+         SSO_GITHUB_IDP_HINT_PARAM } from '@/modules/auth/constants/auth.api.constant';
 
 import Alert from '@/modules/core/components/shared/alert/Alert';
 import { useEffect, useState } from 'react';

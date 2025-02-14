@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useCallback, useEffect, useMemo } from 'react';
 import MainLayout from './MainLayout';
 import AuthorityGuard from '@/modules/core/components/route/AuthorityGuard';
 import ViewRoute from '@/modules/core/components/route/ViewRoute';
-import { PROTECTED_ROUTE, PUBLIC_ROUTE, OTHER_ROUTE } from '@/modules/core/constants/routes.constants';
+import { PROTECTED_ROUTE, PUBLIC_ROUTE, OTHER_ROUTE } from '@/modules/core/constants/routes.constant';
 import { useAppDispatch, useAppSelector } from '@/modules/core/store/hook';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { setCurrentRouteKey } from '@/modules/core/store';

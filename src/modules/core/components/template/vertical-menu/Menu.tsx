@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constants';
+import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constant';
 import { NavigationTree } from '@/modules/core/@core-types/navigation';
 import { navigationRoutes } from '@/modules/core/configs/navigation.config';
 import SingleMenuItem from './single-menu-item/SingleMenuItem';

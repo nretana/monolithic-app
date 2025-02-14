@@ -3,7 +3,7 @@ import { useGetPersonQuery } from '@/modules/features/store/services/PersonServi
 import { Card, Table } from '@mantine/core';
 import LoadingContent from '@/modules/core/components/shared/LoadingContent';
 import Alert from '@/modules/core/components/shared/alert/Alert';
-import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constants';
+import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constant';
 
 const DashboardTable = () => {
 

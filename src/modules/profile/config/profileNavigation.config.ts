@@ -1,8 +1,8 @@
 import { NavigationTree } from '@/modules/core/@core-types/navigation';
-import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constants';
-import { ADMIN, USER } from '@/modules/core/constants/roles.constants';
+import { SINGLE_MENU_ITEM, COLLAPSE_MENU_ITEM } from '@/modules/core/constants/app.constant';
+import { ADMIN, USER } from '@/modules/core/constants/roles.constant';
 import { IconUser } from '@tabler/icons-react';
-import { PROFILE_KEY, PROFILE_PATH } from '../constants/profileRoutes.constants';
+import { PROFILE_KEY, PROFILE_PATH } from '../constants/profile.routes.constants';
 
 export const profileNavigationRoutes: NavigationTree[] = [
     {

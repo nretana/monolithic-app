@@ -8,3 +8,5 @@ export const COVER_LAYOUT = 'side';
 
 export const SINGLE_MENU_ITEM = 'single';
 export const COLLAPSE_MENU_ITEM = 'collapse';
+
+export const BASE_PATH = `${import.meta.env.VITE_APP_BASE_URL}`;
