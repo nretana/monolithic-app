@@ -75,7 +75,7 @@ const authApi: AuthApiService = {
 
                     return { data: null, 
                              isSuccess: false, 
-                             error: { message:  ERROR_MESSAGE_GENERAL_ERROR } 
+                             error: { message:  ERROR_MESSAGE_GENERAL_ERROR }
                            } as ApiResponse<SignInResponse | null>;
                 }
                 catch(error: unknown){
