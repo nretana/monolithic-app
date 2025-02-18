@@ -9,8 +9,6 @@ import ProtectedRoute from './ProtectedRoute';
 import PublicRoute from './PublicRoute';
 import FallbackContent from '@/modules/core/components/shared/FallbackContext';
 
-console.log(BASE_PATH);
-
 const AppRouter = () => {
 
     const allRoutes = createRoutesFromElements(

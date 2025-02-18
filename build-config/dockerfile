@@ -22,6 +22,7 @@ FROM nginx:1.23-alpine AS HOSTING
 WORKDIR /
 RUN mkdir /initApp
 COPY /build-config/entrypoint.sh /initApp
+COPY /build-config/nginx.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*

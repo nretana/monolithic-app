@@ -50,7 +50,6 @@ const NotificationMenu = () => {
 
     useEffect(() => {
         if(lastMessage !== null){
-            console.log('LAST MESSAGE: ', lastMessage);
             const currentNotification = JSON.parse(lastMessage.data) as Notification;
             const notificationFound = notificationHistory.find(message => message.NotificationId === currentNotification.NotificationId);
             if(!notificationFound){
@@ -66,7 +65,6 @@ const NotificationMenu = () => {
 
     const marksAsReadHandler = (notificationId: string) => {
         setNotificationHistory(prevState => {
-            console.log(notificationId);
             const notificationIndex = prevState.findIndex(message => message.NotificationId === notificationId);
 
             if(notificationIndex == -1) return prevState;
@@ -74,7 +72,6 @@ const NotificationMenu = () => {
 
             const newArr = [ ...prevState ];
             newArr[notificationIndex].IsRead = true;
-            console.log(newArr);
             return [...newArr];
         });
     }

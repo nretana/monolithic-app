@@ -31,13 +31,13 @@ const SignInForm = () => {
 
     const navigate = useNavigate();
     const query = useQuery();
-    const [isError, setIsError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [isError, setIsError] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>('');
+    const [isLoadingState, setLoadingState] = useState<boolean>(false);
     const { signIn, signInSSO } = useAuth();
-    const [visible, handlers] = useDisclosure(false);
+    
 
     const signInForm = useForm<SignInFormState>({
-        mode: 'uncontrolled',
         initialValues: {
             username: 'madams@test.com',
             password: '12345'
@@ -46,27 +46,24 @@ const SignInForm = () => {
     });
 
     const onSubmitForm = async() => {
-        handlers.open();
+        setLoadingState(true);
         const response = await signIn({ username: signInForm.values.username,
                                         password: signInForm.values.password });
         if(response && response?.status === "failed"){
             setIsError(true);
+            setLoadingState(false);
             setErrorMessage(response.message);
             return;
         }
 
+        setLoadingState(false);
         const redirectUrl = query.get(REDIRECT_URL_KEY);
         navigate(redirectUrl ? redirectUrl : appConfig.authenticatedEntryPath);
     }
 
     const onClickSignSSO = async (idpHint: string) => {
-        console.log('idp: ', idpHint);
         await signInSSO(idpHint);
     }
-
-    useEffect(() => {
-        handlers.close();
-    }, [isError]);
 
     return(
         <div className='w-full'>
@@ -75,7 +72,7 @@ const SignInForm = () => {
                         </Alert> }
 
             <Box>
-                <LoadingOverlay visible={visible} />
+                <LoadingOverlay visible={isLoadingState} />
                 <form onSubmit={signInForm.onSubmit(onSubmitForm)}>
                     <div>
                         <div className='mb-3'>
@@ -85,8 +82,8 @@ const SignInForm = () => {
                         </div>
                         <div className='mb-2'>
                             <PasswordInput label='Password'
-                                        key={signInForm.key('password')} 
-                                        {...signInForm.getInputProps('password')} />
+                                           key={signInForm.key('password')} 
+                                           {...signInForm.getInputProps('password')} />
                         </div>
                         <div className='flex justify-end mb-3'>
                             <Anchor href='/'>Forgot Password</Anchor>
