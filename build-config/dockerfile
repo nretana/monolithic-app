@@ -28,7 +28,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=BUILD monoapp/dist .
 
-EXPOSE 443
+#EXPOSE 443
 EXPOSE 80
 WORKDIR /
 USER root
