@@ -13,12 +13,20 @@ import store, { persistor } from '@/modules/core/store/index';
 import { Notifications } from '@mantine/notifications';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { Profiler } from 'react';
 
 import './App.scss';
+
 
 const queryClient = new QueryClient();
 dayjs.extend(relativeTime);
 
+const onRenderprofiler = (id:any, phase:any, actualDuration:any, baseDuration:any, startTime:any, commitTime:any) => {
+  console.log(id, 'phase:', phase, 'actualDuration:', actualDuration, 'baseDuration: ',baseDuration);
+}
+
+{/* <Profiler id="App" onRender={onRenderprofiler}> */}
+/* </Profiler> */
 const App = () => {
   return (
     <Provider store={store}>

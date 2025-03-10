@@ -1,3 +1,4 @@
+import { Pagination } from './person.api'
 
 export type EmailAddress = {
     emailAddressId: number
@@ -20,11 +21,16 @@ export type Person = {
     rowguid: string,
     modifiedDate: Date,
     businessEntity?: null,
-    businessEntityContacts?: [],
-    customers?: [],
+    //businessEntityContacts?: [],
+    //customers?: [],
     emailAddresses?: EmailAddress[],
     employee?: null,
     password?: null,
     personCreditCards?: [],
     personPhones?: []
+}
+
+export type PersonWithPagination = {
+    personList: Person[],
+    pagination: Pagination
 }

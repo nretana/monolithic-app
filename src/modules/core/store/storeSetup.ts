@@ -19,9 +19,10 @@ import storage from 'redux-persist/lib/storage'
 import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constant'
 import rootReducer, { RootState, AsyncReducers } from './rootReducer'
 import RtkQueryService from './services/RtkQueryService'
+import { PersonService2 } from '@/modules/features/store/services/PersonService2'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const middlewares: any[] = [RtkQueryService.middleware]
+const middlewares: any[] = [RtkQueryService.middleware, PersonService2.middleware]
 
 const persistConfig = {
     key: PERSIST_STORE_NAME,

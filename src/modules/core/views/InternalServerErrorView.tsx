@@ -9,7 +9,7 @@ const InternalServerErrorView = () => {
           The server encountered an error and could nort complete your request.
           Please, try again later.
         </p>
-        <Button>Retry</Button>
+        <Button component='a' href='/'>Retry</Button>
       </div>
     </section>
   );

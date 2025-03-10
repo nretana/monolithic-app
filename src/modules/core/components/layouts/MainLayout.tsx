@@ -12,7 +12,7 @@ const MainLayout: React.FC<CommonProps> = ({ children }) => {
   console.log('CURRENT SIZE: ', currentScreenSize);
 
   return (
-    <div className='flex items-stretch h-full w-full'>
+    <div className='flex items-stretch h-max w-full'>
       {((currentScreenSize === "Small") || (currentScreenSize === "Medium")) && <MobileNav />}
       {(currentScreenSize === "Large") && <SideBar />}
       <div className='w-full relative flex flex-col'>
