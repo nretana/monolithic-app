@@ -1,19 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Person } from '@/modules/profile/@profile-types/Person';
+import type { Person, PersonWithPagination } from '@/modules/features/@feature-types/person';
+import type { PersonQueryParams } from '@/modules/features/@feature-types/person.api';
 import { API_BASE_URL } from '@/modules/core/constants/api.constant';
 import { queryStringParams } from '@/modules/core/utils/queryStringParams';
-import { Pagination, PersonQueryParams } from '@/modules/features/@feature-types/person.api';
-import { PersonWithPagination } from '../../@feature-types/person';
 
-const delayedBaseQuery = async (args: any, api: any, extraOptions: any) => {
-    await new Promise((resolve) => setTimeout(resolve, 4000));
-    return fetchBaseQuery({ baseUrl: API_BASE_URL, 
-                            prepareHeaders: (headers, {getState}) => {
-                                headers.set('Content-Type', 'application/json');
-                                headers.set('Accept', 'application/json');
-                            return headers; } 
-                          })(args, api, extraOptions);
-};
 
 export const PersonService2 = createApi({
     reducerPath: 'personApi',
