@@ -1,2 +1,7 @@
 @use './assets/styles/tailwind.scss';
 @use './assets/styles/global.scss';
+
+
+:where([data-mantine-color-scheme='light']) .m_e615b15f {
+    background-color: var(--mantine-color-blue-light);
+}

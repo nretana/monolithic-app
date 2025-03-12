@@ -4,7 +4,7 @@ import base, { BaseState } from './slices/base/baseSlice';
 import locale, { LocaleState } from './slices/locale/localeSlice'
 import theme, { ThemeState } from './slices/theme/themeSlice'
 import RtkQueryService from './services/RtkQueryService'
-import { PersonService2 } from '@/modules/features/store/services/PersonService2';
+import { PersonService2 } from '@/modules/entity-management/store/services/PersonService2';
 
 export type RootState = {
     auth: AuthState

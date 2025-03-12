@@ -1,6 +1,6 @@
-import { FEATURE_ADMIN_ROLE_PERMISSION, 
+/* import { FEATURE_ADMIN_ROLE_PERMISSION, 
          FEATURE_TRAINER_ROLE_PERMISSION, 
-         FEATURE_USER_ROLE_PERMISSION } from '@/modules/features/config/featurePermission.config';
+         FEATURE_USER_ROLE_PERMISSION } from '@/modules/features/config/featurePermission.config'; */
 
 export const ADMIN = 'mono-admin';
 export const USER = 'mono-user';
@@ -14,7 +14,7 @@ export const USER = 'mono-user';
     "admin:feature:delete": true
 }*/
 
-const ROLES = {
+/* const ROLES = {
     ['ADMIN']: {
         ...FEATURE_ADMIN_ROLE_PERMISSION,
     },
@@ -25,5 +25,5 @@ const ROLES = {
         ...FEATURE_USER_ROLE_PERMISSION
     }
 }
-
+ */
 //ROLES.ADMIN

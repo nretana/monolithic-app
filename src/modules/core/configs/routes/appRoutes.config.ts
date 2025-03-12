@@ -1,8 +1,8 @@
 import { RouteTree } from '@/modules/core/@core-types/routes';
-import { featureRoutes } from '@/modules/features/config/featureRoutes.config';
-import { profileRoutes } from '@/modules/profile/config/profileRoutes.config';
+import { entityManagementRoutes } from '@/modules/entity-management/config/entityManagementRoutes.config';
+import { notificationRoutes } from '@/modules/notification/config/notificationRoutes.config';
 
 export const appRoutes: RouteTree[] = [
-   ...featureRoutes,
-   ...profileRoutes
+   ...entityManagementRoutes,
+   ...notificationRoutes
 ];

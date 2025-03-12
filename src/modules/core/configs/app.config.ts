@@ -1,4 +1,4 @@
-import { DASHBOARD_PATH } from '@/modules/features/constants/feature.routes.constant';
+import { ENTITY_MANAGEMENT_PATH } from '@/modules/entity-management/constants/entityManagement.routes.constant';
 import { SIGNIN_PATH } from '@/modules/auth/constants/auth.routes.constant';
 import { BASE_PATH } from '@/modules/core/constants/app.constant';
 
@@ -15,10 +15,10 @@ export type AppConfig = {
 const appConfig: AppConfig = {
     apiPrefix: '/',
     appBase: BASE_PATH,
-    authenticatedEntryPath: DASHBOARD_PATH,
+    authenticatedEntryPath: ENTITY_MANAGEMENT_PATH,
     unAuthenticatedEntryPath: SIGNIN_PATH,
     locale: 'en',
-    enableMock: true,
+    enableMock: true
 }
 
 export default appConfig;

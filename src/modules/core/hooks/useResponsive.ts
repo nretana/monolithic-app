@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { ScreenSize } from '@/modules/core/@core-types/theme';
 import { useMantineTheme, px } from '@mantine/core';
+import throttle from 'lodash/throttle'
 
 
 const useResponsive = () => {
@@ -32,7 +33,7 @@ const useResponsive = () => {
     }
 
     useEffect(() => {
-        window.onresize = getCurrentScreenSize;
+        window.onresize = throttle(getCurrentScreenSize, 200);
     }, []);
 
     return { currentScreenSize }

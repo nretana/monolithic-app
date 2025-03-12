@@ -19,7 +19,7 @@ import storage from 'redux-persist/lib/storage'
 import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constant'
 import rootReducer, { RootState, AsyncReducers } from './rootReducer'
 import RtkQueryService from './services/RtkQueryService'
-import { PersonService2 } from '@/modules/features/store/services/PersonService2'
+import { PersonService2 } from '@/modules/entity-management/store/services/PersonService2'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const middlewares: any[] = [RtkQueryService.middleware, PersonService2.middleware]
@@ -58,8 +58,6 @@ store.asyncReducers = {};
 
 export function injectReducer<S>(key: string, reducer: Reducer<S, Action>) {
     if (store.asyncReducers) {
-        
-        console.log("passing here!!!", store.asyncReducers);
         if (store.asyncReducers[key]) {
             return false
         }
@@ -70,8 +68,6 @@ export function injectReducer<S>(key: string, reducer: Reducer<S, Action>) {
                 rootReducer(store.asyncReducers) as Reducer
             )
         )
-
-        console.log("injected reducer", store);
     }
     persistor.persist()
     return store
