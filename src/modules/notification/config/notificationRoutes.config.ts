@@ -6,7 +6,7 @@ export const notificationRoutes: RouteTree[] = [
     {
         key: NOTIFICATION_KEY,
         path: NOTIFICATION_PATH,
-        component: lazy(() => import('../views/NotificationsView')),
+        component: lazy(() => import('../views/NotificationView')),
         authority: [],
         subRoute: []
     }

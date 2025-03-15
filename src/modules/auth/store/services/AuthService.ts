@@ -55,7 +55,6 @@ const authApi: AuthApiService = {
             const mutationFn = async (params: SignInCredential) : Promise<ApiResponse<SignInResponse | null>> => {
                 try {
                     const signInParams = new URLSearchParams();
-                    console.log(params);
                     signInParams.append("username", params?.username);
                     signInParams.append("password", params?.password);
                     signInParams.append(AUTH_GRANT_TYPE_KEY, AUTH_PASSWORD_GRANT_TYPE_PARAM);

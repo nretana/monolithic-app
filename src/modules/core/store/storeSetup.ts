@@ -20,9 +20,12 @@ import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constant'
 import rootReducer, { RootState, AsyncReducers } from './rootReducer'
 import RtkQueryService from './services/RtkQueryService'
 import { PersonService2 } from '@/modules/entity-management/store/services/PersonService2'
+import { ProductService } from '@/modules/product/store/services/ProductService'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const middlewares: any[] = [RtkQueryService.middleware, PersonService2.middleware]
+const middlewares: any[] = [RtkQueryService.middleware,
+                            PersonService2.middleware,
+                            ProductService.middleware];
 
 const persistConfig = {
     key: PERSIST_STORE_NAME,

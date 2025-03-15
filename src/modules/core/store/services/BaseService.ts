@@ -8,10 +8,11 @@ import store from '@/modules/core/store'
 
 const unauthorizedCode = [401]
 
-const BaseService = axios.create({
-    timeout: 60000,
-    baseURL: appConfig.apiPrefix,
-});
+const BaseService = axios.create();
+    /*{
+    //timeout: 60000,
+    //baseURL: appConfig.apiPrefix,
+});*/
 
 const BackgroundService = axios.create({
     timeout: 60000,
@@ -32,9 +33,7 @@ BaseService.interceptors.request.use(
         }
 
         if (accessToken) {
-            config.headers[
-                REQUEST_HEADER_AUTH_KEY
-            ] = `${TOKEN_TYPE}${accessToken}`
+            config.headers[REQUEST_HEADER_AUTH_KEY] = `${TOKEN_TYPE}${accessToken}`
         }
 
         return config

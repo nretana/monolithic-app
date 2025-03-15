@@ -3,7 +3,7 @@ import BaseService from './BaseService';
 
 const AxiosBaseQuery = async (request: {
   url: string;
-  method: AxiosRequestConfig['method'];
+  method?: AxiosRequestConfig['method'];
   data?: AxiosRequestConfig['data'];
   params?: AxiosRequestConfig['params'];
 }) => {

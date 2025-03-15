@@ -3,8 +3,8 @@ import BaseService from './BaseService'
 import type { BaseQueryFn } from '@reduxjs/toolkit/query'
 import type { AxiosRequestConfig, AxiosError } from 'axios'
 
-const axiosBaseQuery =
-    (): BaseQueryFn<
+export const axiosBaseQuery =
+    (requestConfig?: AxiosRequestConfig): BaseQueryFn<
         {
             url: string
             method: AxiosRequestConfig['method']
@@ -16,8 +16,11 @@ const axiosBaseQuery =
     > =>
     async (request) => {
         try {
-            const response = BaseService(request)
-            return response
+            const currentRequest: AxiosRequestConfig = { baseURL: (requestConfig && requestConfig.baseURL), 
+                                                         ...request };
+           
+            const response = await BaseService(currentRequest);
+            return { data: response?.data, meta: { headers: {...(response && response.headers) && response?.headers } } };
         } catch (axiosError) {
             const err = axiosError as AxiosError
             return {

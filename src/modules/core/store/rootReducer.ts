@@ -5,6 +5,7 @@ import locale, { LocaleState } from './slices/locale/localeSlice'
 import theme, { ThemeState } from './slices/theme/themeSlice'
 import RtkQueryService from './services/RtkQueryService'
 import { PersonService2 } from '@/modules/entity-management/store/services/PersonService2';
+import { ProductService } from '@/modules/product/store/services/ProductService';
 
 export type RootState = {
     auth: AuthState
@@ -14,6 +15,7 @@ export type RootState = {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     [RtkQueryService.reducerPath]: any
     [PersonService2.reducerPath]: any
+    [ProductService.reducerPath]: any
 }
 
 export interface AsyncReducers {
@@ -26,7 +28,8 @@ const staticReducers = {
     locale,
     theme,
     [RtkQueryService.reducerPath]: RtkQueryService.reducer,
-    [PersonService2.reducerPath]: PersonService2.reducer
+    [PersonService2.reducerPath]: PersonService2.reducer,
+    [ProductService.reducerPath]: ProductService.reducer
 }
 
 const rootReducer =
