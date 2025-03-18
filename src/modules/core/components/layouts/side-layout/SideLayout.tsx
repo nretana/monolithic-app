@@ -2,9 +2,9 @@ import { CommonProps } from '@/modules/core/@core-types/common';
 import { Container } from '@mantine/core';
 
 
-import classes from './SideLayout.module.scss';
+import classes from './SideLayout.module.css';
 
-const SideLayout: React.FC<CommonProps> = ({ children }) => {
+export const SideLayout: React.FC<CommonProps> = ({ children }) => {
 
     return(<Container fluid={true} className='h-full' px={0}>
         <div className='grid grid-cols-2 h-full'>
@@ -17,5 +17,3 @@ const SideLayout: React.FC<CommonProps> = ({ children }) => {
         </div>
     </Container>)
 }
-
-export default SideLayout;

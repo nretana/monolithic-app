@@ -4,11 +4,11 @@ import { useProfileFilterContext,
 import { Person } from '@/modules/entity-management/@entity-types/person';
 import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constant';
 import { Card, Button, Table } from '@mantine/core';
-import Alert from '@/modules/core/components/shared/alert/Alert';
-import LoadingOverlay from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
-import UserPermissionBox from '@/modules/core/components/shared/permission-box/UserPermissionBox';
+import { Alert } from '@/modules/core/components/shared/alert/Alert';
+import { LoadingOverlay } from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
+import { UserPermissionBox } from '@/modules/core/components/shared/permission-box/UserPermissionBox';
 
-import styles from './DataTable.module.scss';
+import styles from './DataTable.module.css';
 
 
 export const DataTable: React.FC = () => {
@@ -27,7 +27,7 @@ export const DataTable: React.FC = () => {
                                 </Table.Td>
                                 <Table.Td>{person.personType}</Table.Td>
                                 <Table.Td>*****4567</Table.Td>
-                                <Table.Td><UserPermissionBox permission='people:view' 
+                                <Table.Td><UserPermissionBox permission='entity-management:people:view' 
                                                             render={() => <Button type='button'>View</Button>} />
                                 </Table.Td>
                             </Table.Tr>)) }

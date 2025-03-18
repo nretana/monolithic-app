@@ -1,8 +1,9 @@
-import cx from 'clsx';
-import type { Icon, IconProps } from '@tabler/icons-react';
-import { ActionIcon } from '@mantine/core';
-import classes from './IconButton.module.scss';
 import React, { forwardRef } from 'react';
+import cx from 'clsx';
+import type { Icon } from '@tabler/icons-react';
+import { ActionIcon } from '@mantine/core';
+import classes from './IconButton.module.css';
+
 
 export interface IconButtonProps {
     icon: Icon,
@@ -12,7 +13,7 @@ export interface IconButtonProps {
     ref?: any
 }
 
-const IconButton: React.FC<IconButtonProps> = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
+export const IconButton: React.FC<IconButtonProps> = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
 
     const Icon = props.icon;
 
@@ -25,5 +26,3 @@ const IconButton: React.FC<IconButtonProps> = forwardRef<HTMLButtonElement, Icon
                     <Icon className={cx(classes.icon, classes.light)} stroke={1.5} />
             </ActionIcon>)
 });
-
-export default IconButton;

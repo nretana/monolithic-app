@@ -1,23 +1,23 @@
 import React from 'react';
-import { Permission, AppModules, ModuleRights } from '@/modules/core/@core-types/permissions';
+import { ModulePermission, ModuleRights } from '@/modules/core/@core-types/permissions';
 import { USER_PERMISSIONS } from '@/modules/core/constants/app.constant';
 
-//PATTERN
-//[module]:[feature]:[user-right]
-//courses:assignments:read
 
 type UserPermissionBoxProps = {
-    permission: Permission<AppModules>,
+    permission: ModulePermission,
     render: () => JSX.Element,
     permissionDeniedRender?: () => JSX.Element
 }
 
-const UserPermissionBox: React.FC<UserPermissionBoxProps> = (props) => {
-    const permission = props.permission as Permission<AppModules>;
-    const [feature, right] = permission.split(':');
-    const currentPermission = USER_PERMISSIONS[feature as AppModules];
+
+export const UserPermissionBox: React.FC<UserPermissionBoxProps> = (props) => {
+
+    const permission = props.permission as ModulePermission;
+    const [module, feature, userRight] = permission.split(':');
+    const currentPermission = USER_PERMISSIONS[module]?.[feature];
+    
     //TODO: refactor to get permission as obj and remove the usage of looping an array
-    const isUserAllowed = currentPermission.includes(right as ModuleRights);
+    const isUserAllowed = currentPermission && currentPermission.includes(userRight as ModuleRights);
 
     return(<>
             { isUserAllowed ? props.render() : 
@@ -25,5 +25,3 @@ const UserPermissionBox: React.FC<UserPermissionBoxProps> = (props) => {
                               props.permissionDeniedRender()) }
            </>)
 }
-
-export default UserPermissionBox;

@@ -1,6 +1,6 @@
 import { IconMenu2 } from '@tabler/icons-react';
-import IconButton from '@/modules/core/components/shared/icon-button/IconButton';
-import useResponsive from '@/modules/core/hooks/useResponsive';
+import { IconButton } from '@/modules/core/components/shared/icon-button/IconButton';
+import { useResponsive } from '@/modules/core/hooks/useResponsive';
 
 const SideBarToggle = () => {
 

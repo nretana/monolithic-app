@@ -4,7 +4,7 @@ import type { User } from 'oidc-client-ts';
 import type { JWUserToken, AuthResponse } from '@/modules/auth/@auth-types/auth';
 import type { SignInResponse } from '@/modules/auth/@auth-types/signinAuth';
 import type { UserInfo } from '@/modules/auth/@auth-types/userInfo';
-import appConfig from '@/modules/core/configs/app.config';
+import { appConfig } from '@/modules/core/configs/app.config';
 import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constant';
 import { SSO_IDP_HINT_KEY, SSO_GOOGLE_IDP_HINT_PARAM, SSO_SIGN_IN_REDIRECT_URI } from '@/modules/auth/constants/auth.api.constant';
 import { useAuth as useOidc } from 'react-oidc-context';
@@ -124,7 +124,9 @@ function useAuth() {
             name: tokenInfo?.name || '',
             username: tokenInfo.preferredUsername || 'Anonymous',
             email: tokenInfo?.email || '',
-            authority: tokenInfo?.realmAccess ? [...tokenInfo?.realmAccess?.roles] : ['USER']
+            authority: tokenInfo?.resourceAccess ?
+                       [...tokenInfo?.resourceAccess?.roles] : 
+                       ['USER']
         }
 
         dispatch(signInSuccess({ token, refreshToken, isSignInSSO }));

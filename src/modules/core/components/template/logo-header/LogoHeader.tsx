@@ -1,5 +1,5 @@
 
-import classes from './LogoHeader.module.scss';
+import classes from './LogoHeader.module.css';
 
 const LogoHeader = () => {
     return(<div className={classes['logo-header']}>

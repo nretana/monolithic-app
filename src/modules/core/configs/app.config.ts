@@ -14,7 +14,7 @@ export type AppConfig = {
     enableMock: boolean
 }
 
-const appConfig: AppConfig = {
+export const appConfig: AppConfig = {
     apiPrefix: '/',
     appBase: BASE_PATH,
     authenticatedEntryPath: ENTITY_MANAGEMENT_PATH,
@@ -23,5 +23,3 @@ const appConfig: AppConfig = {
     currency: { currency: 'USD', symbol: '$' },
     enableMock: true
 }
-
-export default appConfig;

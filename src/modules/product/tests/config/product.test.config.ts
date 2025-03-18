@@ -1,0 +1,36 @@
+import { delay, http, HttpResponse } from 'msw';
+import { AppMockTestConfig } from '@/modules/core/@core-types/app-test';
+import { ProductFeatures, ProductModule } from '../../@product-types/product-module';
+import { ProductTestCases } from '@/modules/product/@product-types/product-test';
+//import jsonResponse from '../mocks/product-responses/product-success-response.json';
+import { PRODUCT_ENDPOINT, PRODUCT_PAGINATION_HEADER } from '../constants/product.test.constant';
+import { getJsonResponse } from '../utils/getJsonResponse';
+
+
+//module => feature -> use-case
+ export const productTestConfig: AppMockTestConfig<ProductModule, ProductFeatures, ProductTestCases> = {
+    product: { //module
+        product: [ //feature
+            { //use-case
+                testCase: 'allProducts',
+                state: 'success',
+                handlers: {
+                    success: [http.get(PRODUCT_ENDPOINT, async({ request }) => {
+                                await delay(3000);
+                                const jsonResponse = await getJsonResponse('product', 'product');
+                                return HttpResponse.json(jsonResponse, { headers: PRODUCT_PAGINATION_HEADER });
+                             })],
+                    failed: [http.get(PRODUCT_ENDPOINT, ({ request }) => new HttpResponse(null, { status: 500 }))]
+                }
+            },
+            {
+                testCase: 'createProduct',
+                state: 'failed',
+                handlers: {
+                    success: [],
+                    failed: []
+                }
+            }
+        ]
+    }
+ }

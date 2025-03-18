@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Popover, RangeSlider, Text, TextInput } from '@mantine/core';
 import { IconCoin } from '@tabler/icons-react';
 import { InputIcon } from '@/modules/core/components/shared/input-icon/InputIcon';
-import { priceRangeFormat } from '@/modules/product/utils/priceRangeFormat';
+import { priceRangeFormat } from '@/modules/core/utils/priceRangeFormat';
 
 
 type PriceRangeProps = {
     minRange: number,
     min: number,
     max: number,
+    width: number
     value: [number, number],
     onReset?: () => void,
     onClose?: (values: [number, number]) => void
@@ -20,7 +21,7 @@ export const PriceRange: React.FC<PriceRangeProps> = (props) => {
     const [currentPriceRange, setCurrentPriceRange] = useState<string>(`$${props.value[0]} - $${props.value[1]}`);
     const [startPrice, endPrice] = value;
 
-    const updatePriceInputText = () => setCurrentPriceRange(priceRangeFormat(startPrice, endPrice));
+    const updatePriceInputText = useCallback(() => setCurrentPriceRange(priceRangeFormat(startPrice, endPrice)), []);
 
     const onClosePopover = () => { 
         updatePriceInputText();
@@ -34,9 +35,8 @@ export const PriceRange: React.FC<PriceRangeProps> = (props) => {
 
     return(<Popover width={300} trapFocus onClose={onClosePopover}>
             <Popover.Target>
-                <div className='flex'>
+                <div className='flex' style={{ width: props.width }}>
                     <TextInput label='Price Range'
-                               className='me-2'
                                rightSection={<InputIcon icon={IconCoin}
                                aria-label='show price range' />}
                                onChange={() => setCurrentPriceRange(priceRangeFormat(startPrice, endPrice))}

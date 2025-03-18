@@ -8,7 +8,7 @@ import { useForm } from '@mantine/form';
 import { TextInput } from '@mantine/core';
 import { PriceRange } from '@/modules/core/components/template/price-range/PriceRange';
 
-import styles from './Filter.module.scss';
+import styles from './Filter.module.css';
 
 
 export const Filter: React.FC = () => {
@@ -61,31 +61,35 @@ export const Filter: React.FC = () => {
         filterOptions.endPrice]);
 
     return(<>
-                <form className={clsx(styles['filter-options'], 'w-full', 'lg:w-9/12 mb-3')}>
-                    <fieldset className='flex' disabled={(isFetching || isLoading)}>
-                        <div className={clsx(styles['filter-item'])}>
+                <form className={clsx(styles['filter-options'], 'w-full', 'xl:w-9/12', 'mb-3')}>
+                    <fieldset className='flex flex-wrap' disabled={(isFetching || isLoading)}>
+                        <div className='mr-3'>
                             <TextInput label='Name'
                                     key={productFilterForm.key('name')} 
                                     {...productFilterForm.getInputProps('name')}
-                                    onKeyDown={onKeyDownName} />
+                                    onKeyDown={onKeyDownName}
+                                    width={185} />
                         </div>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-3'>
                             <TextInput label='Product Number'
                                     key={productFilterForm.key('productNumber')} 
                                     {...productFilterForm.getInputProps('productNumber')}
-                                    onKeyDown={onKeyDownProductNumber} />
+                                    onKeyDown={onKeyDownProductNumber}
+                                    width={185} />
                         </div>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-3'>
                             <TextInput label='Product Model'
                                     key={productFilterForm.key('productModel')} 
                                     {...productFilterForm.getInputProps('productModel')}
-                                    onKeyDown={onKeyDownProductModel} />
+                                    onKeyDown={onKeyDownProductModel}
+                                    width={185} />
                         </div>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-3'>
                             <PriceRange minRange={MIN_PRICE}
                                         min={MIN_PRICE}
                                         max={MAX_PRICE}
-                                        value={[filterOptions.startPrice, filterOptions.endPrice]} 
+                                        value={[filterOptions.startPrice, filterOptions.endPrice]}
+                                        width={185} 
                                         onReset={onResetPriceRange}
                                         onClose={onSetPriceRange} />
                         </div>

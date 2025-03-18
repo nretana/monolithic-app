@@ -1,13 +1,13 @@
 import { createBrowserRouter, createRoutesFromElements, Routes, Route, Navigate } from 'react-router-dom';
 import type { RouteTree } from '@/modules/core/@core-types/routes';
-import { protectedRoutes, publicRoutes, miscRoutes, errorRoutes } from '@/modules/core/configs/routes/allRoutes.config';
-import appConfig from '@/modules/core/configs/app.config';
+import { protectedRoutes, publicRoutes, miscRoutes, errorRoutes } from '@/modules/core/configs/routes/all.routes.config';
+import { appConfig } from '@/modules/core/configs/app.config';
 import { BASE_PATH } from '@/modules/core/constants/app.constant';
 import { PROTECTED_ROUTE, PUBLIC_ROUTE, OTHER_ROUTE } from '@/modules/core/constants/routes.constant';
 import AppLayout from '@/modules/core/components/layouts/AppLayout';
 import ProtectedRoute from './ProtectedRoute';
 import PublicRoute from './PublicRoute';
-import FallbackContent from '@/modules/core/components/shared/FallbackContext';
+import { FallbackContent } from '@/modules/core/components/shared/FallbackContext';
 
 const AppRouter = () => {
 

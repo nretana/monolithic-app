@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Box, ScrollArea } from '@mantine/core';
 import Menu from '../vertical-menu/Menu';
-import classes from './SideNav.module.scss'
+import classes from './SideNav.module.css'
 
 
 const SideNav = () => {

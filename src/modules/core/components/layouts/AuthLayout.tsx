@@ -2,7 +2,7 @@ import React from 'react';
 import type { CommonProps } from '@/modules/core/@core-types/common';
 import { COVER_LAYOUT, SIDE_LAYOUT } from '@/modules/core/constants/app.constant';
 import CoverLayout from './CoverLayout';
-import SideLayout from './side-layout/SideLayout';
+import { SideLayout } from './side-layout/SideLayout';
 
 
 type AuthLayoutProps = CommonProps & {

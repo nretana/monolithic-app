@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import appConfig from '@/modules/core/configs/app.config';
+import { appConfig } from '@/modules/core/configs/app.config';
 import useAuth from '@/modules/auth/hooks/useAuth';
 
 const ProtectedRoute = () => {

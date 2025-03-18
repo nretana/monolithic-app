@@ -22,7 +22,8 @@ export type JWUserToken = {
     sub: string
     typ: string
     sid: string
-    realmAccess: UserRoles,
+    realmAccess: UserRoles[],
+    resourceAccess: UserRoles,
     name: string,
     preferredUsername: string,
     familyName: string,

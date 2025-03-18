@@ -21,14 +21,6 @@ export default ({ mode } : { mode: string }) => {
     server: {
       port: 5175
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-          additionalData: `@use "@assets/styles/base/mantine" as mantine;`
-        },
-      },
-    },
     assetsInclude: ['**/*.md'],
     resolve: {
       alias: {

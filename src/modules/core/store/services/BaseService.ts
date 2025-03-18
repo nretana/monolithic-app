@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import appConfig from '@/modules/core/configs/app.config'
+import { appConfig } from '@/modules/core/configs/app.config'
 import { TOKEN_TYPE, REQUEST_HEADER_AUTH_KEY } from '@/modules/core/constants/api.constant'
 import { PERSIST_STORE_NAME } from '@/modules/core/constants/app.constant'
 import deepParseJson from '@/modules/core/utils/deepParseJson'

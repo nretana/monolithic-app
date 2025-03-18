@@ -7,7 +7,7 @@ import { PERSON_TYPE_LIST } from '@/modules/entity-management/constants/entityMa
 import { useForm } from '@mantine/form';
 import { Select, TextInput } from '@mantine/core';
 
-import styles from './Filter.module.scss';
+import styles from './Filter.module.css';
 
 
 export const Filter: React.FC = () => {
@@ -46,19 +46,19 @@ export const Filter: React.FC = () => {
     return(<>
                 <form className={clsx(styles['filter-options'], 'w-full', 'lg:w-9/12 mb-3')}>
                     <fieldset className='flex' disabled={(isFetching || isLoading)}>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-2'>
                             <TextInput label='Name' 
                                     key={profileFilterForm.key('firstName')} 
                                     {...profileFilterForm.getInputProps('firstName')}
                                     onKeyDown={onKeyDownFirstName} />
                         </div>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-2'>
                             <TextInput label='Last Name'
                                     key={profileFilterForm.key('lastName')} 
                                     {...profileFilterForm.getInputProps('lastName')}
                                     onKeyDown={onKeyDownLastName} />
                         </div>
-                        <div className={clsx(styles['filter-item'])}>
+                        <div className='mr-2'>
                         <Select label='Type'
                                 placeholder='Person type'
                                 key={profileFilterForm.key('personType')} 

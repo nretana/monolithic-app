@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import useAuthority from '@/modules/auth/hooks/useAuthority';
-import AccessForbiddenContent from '@/modules/core/components/shared/AccessForbiddenContent';
+import { AccessForbiddenContent } from '@/modules/core/components/shared/AccessForbiddenContent';
 
 
 type AuthorityGuardProps = PropsWithChildren & {

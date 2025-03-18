@@ -2,11 +2,10 @@ import cx from 'clsx';
 import { Menu, Text, rem } from '@mantine/core';
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
 import { Avatar } from '@mantine/core';
-import classes from './UserMenu.module.scss';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { useAppSelector } from '@/modules/core/store/hook';
 import { notifications } from '@mantine/notifications';
-
+import classes from './UserMenu.module.css';
 
 const UserMenu = () => {
 
@@ -27,7 +26,7 @@ const UserMenu = () => {
     <Menu width={250}>
       <Menu.Target>
         <div className={cx(classes['user-menu-target'], 'flex items-stretch cursor-pointer px-2 p-2 h-full')}>
-          <Avatar color='blue' size='lg'>
+          <Avatar color='orange' size='lg'>
             <IconUser />
           </Avatar>
           <div className='ps-2 flex justify-center flex-col'>

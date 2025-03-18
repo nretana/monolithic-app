@@ -4,7 +4,7 @@ import { useMantineTheme, px } from '@mantine/core';
 import throttle from 'lodash/throttle'
 
 
-const useResponsive = () => {
+export const useResponsive = () => {
     const theme = useMantineTheme();
     const [currentScreenSize, setCurrentScreenSize] = useState<ScreenSize>("Large");
     const screenSizes = useMemo(() => 
@@ -38,5 +38,3 @@ const useResponsive = () => {
 
     return { currentScreenSize }
 }
-
-export default useResponsive;

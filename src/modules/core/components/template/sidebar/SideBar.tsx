@@ -1,8 +1,8 @@
 import LogoHeader from '@/modules/core/components/template/logo-header/LogoHeader';
 import SideNav from '@/modules/core/components/template/sidenav/SideNav';
-import classes from './SideBar.module.scss';
+import classes from './SideBar.module.css';
 
-const SideBar = () => {
+export const SideBar = () => {
 
   return (
     <div className={classes.sidebar}>
@@ -16,5 +16,3 @@ const SideBar = () => {
     </div>
   );
 };
-
-export default SideBar;

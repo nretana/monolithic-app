@@ -2,7 +2,7 @@ import { Avatar } from '@mantine/core';
 import { IconUser } from '@tabler/icons-react';
 import useGenColor from '@/modules/core/hooks/useGenColor';
 
-const NotificationAvatar = ({ notificationType } : { notificationType: string }) => {
+export const NotificationAvatar = ({ notificationType } : { notificationType: string }) => {
     const { colorList } = useGenColor();
     let notificationColor = '';
     switch(notificationType){
@@ -33,5 +33,3 @@ const NotificationAvatar = ({ notificationType } : { notificationType: string })
                <IconUser />
            </Avatar>);
 }
-
-export default NotificationAvatar;

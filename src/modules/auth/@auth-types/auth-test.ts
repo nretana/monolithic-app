@@ -1,0 +1,1 @@
+export type AuthTestCases = 'signin' | 'signup' | 'signout';

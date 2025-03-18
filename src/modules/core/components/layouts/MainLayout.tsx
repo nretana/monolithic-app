@@ -1,9 +1,9 @@
 import React from 'react';
 import { CommonProps } from '@/modules/core/@core-types/common';
-import Header from '@/modules/core/components/template/Header';
-import SideBar from '@/modules/core/components/template/sidebar/SideBar';
-import MobileNav from '@/modules/core/components/template/mobilenav/MobileNav';
-import useResponsive from '@/modules/core/hooks/useResponsive';
+import Header from '@/modules/core/components/template/header/Header';
+import { SideBar } from '@/modules/core/components/template/sidebar/SideBar';
+import { MobileNav } from '@/modules/core/components/template/mobilenav/MobileNav';
+import { useResponsive } from '@/modules/core/hooks/useResponsive';
 
 
 const MainLayout: React.FC<CommonProps> = ({ children }) => {

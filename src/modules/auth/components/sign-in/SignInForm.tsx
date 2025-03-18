@@ -1,21 +1,20 @@
 
+import { useState } from 'react';
 import * as yup from 'yup';
 import { useForm } from '@mantine/form';
 import { Anchor, Box, Divider, PasswordInput, TextInput, Button } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 import { IconBrandGithub, IconBrandGoogle } from '@tabler/icons-react';
 import { yupResolver } from '@mantine/form';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import useQuery from '@/modules/core/hooks/useQuery';
 import { REDIRECT_URL_KEY } from '@/modules/core/constants/app.constant';
-import appConfig from '@/modules/core/configs/app.config';
+import { appConfig } from '@/modules/core/configs/app.config';
 import { SSO_GOOGLE_IDP_HINT_PARAM,
          SSO_GITHUB_IDP_HINT_PARAM } from '@/modules/auth/constants/auth.api.constant';
 
-import Alert from '@/modules/core/components/shared/alert/Alert';
-import { useEffect, useState } from 'react';
-import LoadingOverlay from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
+import { Alert } from '@/modules/core/components/shared/alert/Alert';
+import { LoadingOverlay } from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
 
 type SignInFormState = {
     username: string,

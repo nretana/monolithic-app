@@ -7,7 +7,7 @@ import { PROTECTED_ROUTE, PUBLIC_ROUTE, OTHER_ROUTE } from '@/modules/core/const
 import { useAppDispatch, useAppSelector } from '@/modules/core/store/hook';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { setCurrentRouteKey } from '@/modules/core/store';
-import LoadingContent from '@/modules/core/components/shared/LoadingContent';
+import { LoadingContent } from '@/modules/core/components/shared/LoadingContent';
 
 
 type AppLayoutProps = {

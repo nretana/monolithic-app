@@ -2,8 +2,8 @@ import cx from 'clsx';
 import dayjs from 'dayjs';
 import type { Notification } from '@/modules/core/@core-types/notification';
 import { Text } from '@mantine/core';
-import NotificationAvatar from '@/modules/core/components/template/notification-menu/notification-avatar/NotificationAvatar';
-import classes from './NotificationMenuItem.module.scss';
+import { NotificationAvatar } from '@/modules/core/components/template/notification-menu/notification-avatar/NotificationAvatar';
+import classes from './NotificationMenuItem.module.css';
 
 
 const NotificationMenuItem = ({ notificationItem } : { notificationItem: Notification }) => {

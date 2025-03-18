@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import type { NavigationTree } from '@/modules/core/@core-types/navigation';
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton, rem } from '@mantine/core';
 import { Icon, IconChevronRight } from '@tabler/icons-react';
+import classes from './CollapseMenuItem.module.css';
 
-import classes from './CollapseMenuItem.module.scss';
 
 type CollapseMenuItemProps = {
     route: NavigationTree,
@@ -45,12 +45,12 @@ const CollapsibleMenuItem: React.FC<CollapseMenuItemProps> = ({ route, routeKeyA
                       onClick={(event) => onClickCollapsiblePanel(event, route)}
                       className={classes['collapse-menu-item']}
                       data-active={route.key === routeKeyActive || undefined}>
-        <Group justify="space-between" gap={0}>
+        <Group justify='space-between' gap={0}>
           <Box style={{ display: 'flex', alignItems: 'center' }}>
-            <ThemeIcon variant="light" size={30}>
+            <ThemeIcon variant='transparent' className={classes.icon} size={30}>
               <Icon style={{ width: rem(18), height: rem(18) }} />
             </ThemeIcon>
-            <Box ml="md">{route.title}</Box>
+            <Box ml='md'>{route.title}</Box>
           </Box>
           {hasLinks && (
             <IconChevronRight

@@ -1,6 +1,10 @@
 :root {
     color-scheme: var(--mantine-color-scheme);
 }
+
+:root[data-mantine-color-scheme='light'] {
+    --mantine-color-text: rgb(49, 54, 82);
+}
   
 body {
     font-family: var(--mantine-font-family);

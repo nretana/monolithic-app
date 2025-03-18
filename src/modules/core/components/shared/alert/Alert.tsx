@@ -1,3 +1,4 @@
+import React from 'react';
 import cx from 'clsx';
 import { CommonProps } from '@/modules/core/@core-types/common';
 import { AlertProps as BaseAlertProps , Alert as BaseAlert } from '@mantine/core';
@@ -5,8 +6,7 @@ import { IconAlertTriangleFilled,
          IconCircleCheckFilled,
          IconCircleXFilled,
          IconInfoCircleFilled } from '@tabler/icons-react';
-import classes from './Alert.module.scss';
-import React from 'react';
+import classes from './Alert.module.css';
 
 
 type AlertProps = BaseAlertProps & CommonProps & {
@@ -27,7 +27,7 @@ const AlertIcon: React.FC<{ severity?: 'success' | 'info' | 'warning' | 'error'}
     }
 }
 
-const Alert: React.FC<AlertProps> = (props) => {
+export const Alert: React.FC<AlertProps> = (props) => {
 
     return(<BaseAlert {...props}
                       icon={<AlertIcon severity={props.severity} />}
@@ -38,5 +38,3 @@ const Alert: React.FC<AlertProps> = (props) => {
                 {props.children}
            </BaseAlert>)
 }
-
-export default Alert;

@@ -1,13 +1,14 @@
 import React, { forwardRef, useState, useEffect } from 'react';
+import { WS_BASE_URL } from '@/modules/core/constants/api.constant';
 import { Divider, ScrollArea, Box, Indicator, Popover, List, Text, Anchor  } from '@mantine/core';
-import IconButton from '@/modules/core/components/shared/icon-button/IconButton';
+import { IconButton } from '@/modules/core/components/shared/icon-button/IconButton';
 import { IconBell } from '@tabler/icons-react';
 import NotificationMenuItem from './notification-menu-item/NotificationMenuItem';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
 import type { Notification } from '@/modules/core/@core-types/notification';
-import { WS_BASE_URL } from '@/modules/core/constants/api.constant';
 
-import classes from './NotificationMenu.module.scss';
+
+import classes from './NotificationMenu.module.css';
 
 
 interface NotificationToggleProps extends React.ComponentPropsWithoutRef<'button'> {
@@ -34,7 +35,7 @@ const NotificationToggle: React.FC<NotificationToggleProps> = forwardRef<HTMLBut
     }
 );
 
-const NotificationMenu = () => {
+export const NotificationMenu = () => {
 
     const { lastMessage, readyState } = useWebSocket(WS_BASE_URL);
     const [notificationHistory , setNotificationHistory] = useState<Notification[]>([]);
@@ -105,5 +106,3 @@ const NotificationMenu = () => {
                 </Popover.Dropdown>
             </Popover>)
 }
-
-export default NotificationMenu;

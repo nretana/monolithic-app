@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import appConfig from '@/modules/core/configs/app.config'
+import { appConfig } from '@/modules/core/configs/app.config'
 
 export type LocaleState = {
     currentLang: string

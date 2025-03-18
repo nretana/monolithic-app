@@ -48,7 +48,7 @@ export const Tag: React.FC = () => {
                                                     icon={<IconX />} 
                                                     variant='light' 
                                                     defaultChecked={true}
-                                                    className='mr-2'
+                                                    className='mr-3'
                                                     value={tag.value}
                                                     onClick={onResetTag} 
                                                     onKeyDown={onKeyDownTag}>{tag.label}</Chip>) }

@@ -1,0 +1,7 @@
+
+.user-menu {
+    .icon {
+        width: var(--mantine-font-size-md);
+        height: var(--mantine-font-size-md);
+    }
+}

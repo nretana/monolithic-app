@@ -17,6 +17,6 @@ export const InputIcon: React.FC<InputIconProps> = (props) => {
     return (<ActionIcon variant='default'
                         className={cx('border-none', className)}
                         {...restProps}>
-                <Icon size={16} />
+                <Icon size={16} stroke={1} />
             </ActionIcon>)
 }

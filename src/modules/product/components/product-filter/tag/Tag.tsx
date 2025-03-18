@@ -4,7 +4,7 @@ import { useProductFilterContext,
 import { Chip } from '@mantine/core';
 import { IconX } from '@tabler/icons-react';
 import { MAX_PRICE, MIN_PRICE } from '@/modules/product/constants/product.constant';
-import { priceRangeFormat } from '@/modules/product/utils/priceRangeFormat';
+import { priceRangeFormat } from '@/modules/core/utils/priceRangeFormat';
 
 
 type KeyTag = keyof Omit<FilterOptions, 'pageSize|pageNumber'>
@@ -62,7 +62,7 @@ export const Tag: React.FC = () => {
                                                     icon={<IconX />} 
                                                     variant='light' 
                                                     checked
-                                                    className='mr-2'
+                                                    className='mr-3'
                                                     value={tag.value}
                                                     onClick={onResetTag} 
                                                     onKeyDown={onKeyDownTag}>{tag.label}</Chip>) }

@@ -1,6 +1,6 @@
 import { useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { IconSun, IconMoon } from '@tabler/icons-react';
-import IconButton from '@/modules/core/components/shared/icon-button/IconButton';
+import { IconButton } from '@/modules/core/components/shared/icon-button/IconButton';
 
 
 const ThemeToggle = () => {

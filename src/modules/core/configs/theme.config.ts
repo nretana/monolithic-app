@@ -1,4 +1,4 @@
-import { Anchor, createTheme } from '@mantine/core';
+import { Anchor, Button, Table, createTheme } from '@mantine/core';
 import { THEME_ENUM } from '@/modules/core/constants/theme.constant'
 import {
     Direction,
@@ -45,6 +45,7 @@ export const themeConfig: ThemeConfig = {
 
 /* mantine core theme */
 export const theme = createTheme({
+  primaryColor: 'orange',
   defaultRadius: '0.25rem',
   components: {
     Anchor:Anchor.extend({
