@@ -52,7 +52,7 @@ export default ({ mode } : { mode: string }) => {
                 return `assets/css/[name]-[hash][extname]`;
               }
             }
-          return `assets/[name]-[hash][extname]`;
+            return `assets/[name]-[hash][extname]`;
           },
         }
       }

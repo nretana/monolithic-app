@@ -9,7 +9,7 @@ type AuthLayoutProps = CommonProps & {
     layoutType?: 'cover' | 'side'
 }
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children, layoutType = SIDE_LAYOUT }) => {
+const AuthLayout: React.FC<AuthLayoutProps> = ({ children, layoutType = COVER_LAYOUT }) => {
     return( <>
             {layoutType === COVER_LAYOUT ?
             <CoverLayout>
