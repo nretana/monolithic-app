@@ -5,6 +5,7 @@ import throttle from 'lodash/throttle'
 
 
 export const useResponsive = () => {
+
     const theme = useMantineTheme();
     const [currentScreenSize, setCurrentScreenSize] = useState<ScreenSize>("Large");
     const screenSizes = useMemo(() => 
@@ -16,25 +17,22 @@ export const useResponsive = () => {
         }), [theme.breakpoints]);
 
     const getCurrentScreenSize = () => {
-        console.log("passing here!!!!!", window.innerWidth);
         let screenBreakpoint = window.innerWidth;
         if ((screenBreakpoint <= screenSizes.xs) || (screenBreakpoint <= screenSizes.sm)) {
-            console.log("small value");
             setCurrentScreenSize("Small");
         }
         else if (screenBreakpoint <=  screenSizes.md){
-            console.log("medium value");
             setCurrentScreenSize("Medium");
         }
         else {
-            console.log("large value");
             setCurrentScreenSize("Large");
         }
     }
 
     useEffect(() => {
-        window.onresize = throttle(getCurrentScreenSize, 200);
-    }, []);
+        window.addEventListener('resize', throttle(getCurrentScreenSize, 200));
+        return () => window.removeEventListener('resize', getCurrentScreenSize);
+    }, [currentScreenSize]);
 
     return { currentScreenSize }
 }

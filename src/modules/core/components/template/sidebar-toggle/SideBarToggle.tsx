@@ -1,22 +1,17 @@
 import { IconMenu2 } from '@tabler/icons-react';
 import { IconButton } from '@/modules/core/components/shared/icon-button/IconButton';
-import { useResponsive } from '@/modules/core/hooks/useResponsive';
+import { setSideNavCollapse, useAppDispatch, useAppSelector } from '@/modules/core/store';
+
 
 const SideBarToggle = () => {
 
-    const { currentScreenSize } = useResponsive();
+    const dispatch = useAppDispatch();
+    const isSideNavCollapsed = useAppSelector(state => state.theme.sideNavCollapse);
 
-    const onCollapseMenuHandler = () => {
-        if(currentScreenSize === "Small" || currentScreenSize === "Medium"){
-            //collapse small menu
-        }
-        else {
-            //collapse large menu
-        }
-    }
+    const onCollapseMenuHandler = () => dispatch(setSideNavCollapse(!isSideNavCollapsed));
     
     return(<IconButton icon={IconMenu2} 
-                       ariaLabel="Collapse menu" 
+                       ariaLabel='Collapse menu'
                        onClick={onCollapseMenuHandler} />)
 }
 

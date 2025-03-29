@@ -1,48 +1,46 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import type { Person, PersonWithPagination } from '@/modules/entity-management/@entity-types/person';
 import type { PersonQueryParams } from '@/modules/entity-management/@entity-types/person.api';
-import { API_BASE_URL } from '@/modules/core/constants/api.constant';
 import { queryStringParams } from '@/modules/core/utils/queryStringParams';
+import { axiosBaseQuery } from '@/modules/core/store/services/RtkQueryService';
+import { personEndpoints } from '@/modules/entity-management/configs/entityManagementEndpoints.config';
 
 
 export const PersonService2 = createApi({
     reducerPath: 'personApi',
-    baseQuery: fetchBaseQuery({
-        baseUrl: API_BASE_URL,
-        prepareHeaders: (headers, {getState}) => {
-            headers.set('Content-Type', 'application/json');
-            headers.set('Accept', 'application/json');
-            return headers;
-        }
+    baseQuery: axiosBaseQuery({
+        baseURL: personEndpoints.baseUrl, 
+        timeout: 60000,
+        headers: personEndpoints.headers
     }),
     tagTypes: ['People'],
     endpoints: (builder) => ({
         getPeople: builder.query<PersonWithPagination, PersonQueryParams>({
             query: (params) => {
                 const queryParams = queryStringParams(params);
-                return ({ url: '/person', method: 'GET', params: queryParams })
+                return ({ url: personEndpoints.endpoints.getPeople, method: 'GET', params: queryParams })
             },
-            transformResponse: (response, meta) => {
-                const paginationHeader = meta?.response?.headers.get('X-Pagination') ?? '{}';
+            transformResponse: (response: any, meta: any) => {
+                const paginationHeader = meta?.headers['x-pagination'] ?? '{}';
                 return { personList: response, pagination: JSON.parse(paginationHeader) } as PersonWithPagination
             },
             providesTags: ['People']
         }),
         getPerson: builder.query<Person, string>({
             query: (personId) => {
-                return { url: `/person/${personId}`, method: 'GET' }
+                return { url: personEndpoints.endpoints.getPerson(personId), method: 'GET' }
             }
         }),
         addPerson: builder.mutation<any, any>({
             query: (body) => ({
-                url: '/person',
+                url: personEndpoints.endpoints.addPerson,
                 method: 'POST',
                 body: JSON.stringify(body)
             })
         }),
         deletePerson: builder.mutation<unknown, string>({
             query: (personId) => ({
-                url: `/person/${personId}`,
+                url: personEndpoints.endpoints.getPerson(personId),
                 method: 'DELETE'
             })
         })

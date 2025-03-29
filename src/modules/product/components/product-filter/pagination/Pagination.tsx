@@ -33,19 +33,21 @@ export const Pagination: React.FC = () => {
         filterOptions.endPrice]);
     
     return(<>
-            <div className='flex flex-wrap justify-between w-full xl:w-9/12 relative mt-3'>
-                <div className='self-center'>
+            <div className='flex flex-wrap justify-between w-full 2xl:w-9/12 relative mt-3'>
+                <div className='self-center hidden md:block'>
                     <span className='font-semibold mr-1'>{totalCount}</span>
                     <span>{`${totalCount === 1 ? 'record' : 'records' } found`}</span>
                 </div>
                 <MantinePagination total={totalPages}
                                    value={currentPage}
+                                   siblings={0}
                                    className='sm:mb-0 md:mb-0'
-                                   onChange={(value) => setFilterOptions('pageNumber', value)} disabled={isFetching} />
+                                   onChange={(value) => setFilterOptions('pageNumber', value)} 
+                                   disabled={isFetching}  />
                 
                 <Select placeholder='List page'
                         data={PAGE_SIZE_LIST}
-                        className='ml-0 md:ml-3'
+                        className='ml-0 md:ml-3 w-[100px]'
                         onChange={onChangePageSize}
                         value={filterOptions.pageSize.toString()}
                         disabled={isFetching} />

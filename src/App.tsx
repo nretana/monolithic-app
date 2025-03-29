@@ -23,14 +23,14 @@ import './App.css';
 const queryClient = new QueryClient();
 dayjs.extend(relativeTime);
 
-const onRenderprofiler = (id:any, phase:any, actualDuration:any, baseDuration:any, startTime:any, commitTime:any) => {
+/* const onRenderprofiler = (id:any, phase:any, actualDuration:any, baseDuration:any, startTime:any, commitTime:any) => {
   console.log(id, 'phase:', phase, 'actualDuration:', actualDuration, 'baseDuration: ',baseDuration);
-}
-if(appConfig.enableMock){
+} */
+
+/* if(appConfig.enableMock){ //&& process.env.NODE_ENV === 'development'){
   const server = mockServer();
   server.start();
-  
-}
+} */
 
 {/* <Profiler id="App" onRender={onRenderprofiler}> */}
 /* </Profiler> */
@@ -40,7 +40,7 @@ const App = () => {
       <AuthProvider {...ssoConfig}>
         <QueryClientProvider client={queryClient}>
           <PersistGate loading={null} persistor={persistor}>
-            <MantineProvider theme={theme}>
+            <MantineProvider theme={theme} classNamesPrefix='app'>
               <Notifications />
               <RouterProvider
                 router={allRoutes}

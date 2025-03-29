@@ -18,7 +18,6 @@ const SSOCallbackView = () => {
   const authFlow = query.get('authflow') || '';
 
   useEffect(() => {
-    console.log(error);
     if(error){
       navigate(appConfig.authenticatedEntryPath);
       return;

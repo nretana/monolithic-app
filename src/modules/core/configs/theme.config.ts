@@ -1,57 +1,30 @@
-import { Anchor, Button, Table, createTheme } from '@mantine/core';
-import { THEME_ENUM } from '@/modules/core/constants/theme.constant'
-import {
-    Direction,
-    Mode,
-    ColorLevel,
-    NavMode,
-    ControlSize,
-    LayoutType,
-} from '@/modules/core/@core-types/theme'
+import { Anchor, Button, Chip, Table, createTheme } from '@mantine/core';
+
 
 export type ThemeConfig = {
-    themeColor: string
-    direction: Direction
-    mode: Mode
-    primaryColorLevel: ColorLevel
-    panelExpand: boolean
-    navMode: NavMode
-    controlSize: ControlSize
-    cardBordered: boolean
-    layout: {
-        type: LayoutType
-        sideNavCollapse: boolean
-    }
+    sideNavCollapse: boolean
 }
 
-/**
- * Since some configurations need to be match with specific themes,
- * we recommend to use the configuration that generated from demo.
- */
 export const themeConfig: ThemeConfig = {
-    themeColor: 'indigo',
-    direction: THEME_ENUM.DIR_LTR,
-    mode: THEME_ENUM.MODE_LIGHT,
-    primaryColorLevel: 600,
-    cardBordered: true,
-    panelExpand: false,
-    controlSize: 'md',
-    navMode: THEME_ENUM.NAV_MODE_LIGHT,
-    layout: {
-        type: THEME_ENUM.LAYOUT_TYPE_CLASSIC,
-        sideNavCollapse: false,
-    },
+    sideNavCollapse: false
 }
 
 /* mantine core theme */
 export const theme = createTheme({
   primaryColor: 'orange',
   defaultRadius: '0.25rem',
+  breakpoints: {
+    xs: '640px',
+    sm: '768px',
+    md: '1024px',
+    lg: '1280px',
+    xl: '1536px',
+  },
   components: {
-    Anchor:Anchor.extend({
+    Anchor: Anchor.extend({
         defaultProps: {
             fz:"inherit"
         }
-     })
+    })
   }
 });

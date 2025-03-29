@@ -3,9 +3,9 @@ import type { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import type { ApiResponse } from '@/modules/auth/@auth-types/auth';
 import type { SignInCredential, SignInResponse } from '@/modules/auth/@auth-types/signinAuth';
 import type { SignUpCredential, SignUpRequestParams, SignUpResponse } from '@/modules/auth/@auth-types/signupAuth';
-import {  REQUEST_CONTENT_TYPE_URL_ENCODED, 
+import {  CONTENT_TYPE_URL_ENCODED, 
           REQUEST_HEADER_CONTENT_TYPE_KEY, 
-          REQUEST_CONTENT_TYPE_JSON } from '@/modules/core/constants/api.constant';
+          CONTENT_TYPE_JSON } from '@/modules/core/constants/api.constant';
 import { AUTH_API_BASE_URL,
          AUTH_GRANT_TYPE_KEY, 
          AUTH_CLIENT_ID_KEY,
@@ -17,6 +17,7 @@ import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessa
 import { ERROR_MESSAGE_INVALID_CREDENTIALS, 
          ERROR_MESSAGE_INVALID_TOKEN } from '@/modules/auth/constants/auth.errormessages.constant';
 import BaseService from '@/modules/core/store/services/BaseService';
+import { authEndpoints } from '../../config/auth.endpoints.config';
 
 
 type AuthApiService = {
@@ -49,7 +50,7 @@ const getErrorResponse = (error: AxiosError) => {
 const authApi: AuthApiService = {
     initRequestConfig: {
          baseURL: AUTH_API_BASE_URL,
-         headers: { [REQUEST_HEADER_CONTENT_TYPE_KEY]: REQUEST_CONTENT_TYPE_URL_ENCODED }
+         headers: { [REQUEST_HEADER_CONTENT_TYPE_KEY]: CONTENT_TYPE_URL_ENCODED }
     },
     useSignInMutation: function () : UseMutationResult<ApiResponse<SignInResponse | null>, Error, SignInCredential, unknown> {
             const mutationFn = async (params: SignInCredential) : Promise<ApiResponse<SignInResponse | null>> => {
@@ -61,7 +62,7 @@ const authApi: AuthApiService = {
                     signInParams.append(AUTH_CLIENT_ID_KEY, AUTH_CLIENT_ID_PARAM);
 
                     const response = await BaseService({ ...authApi.initRequestConfig,
-                                                            url: `/protocol/openid-connect/token`,
+                                                            url: authEndpoints.endpoints.signIn,
                                                             data: signInParams,
                                                             method: 'POST' });
                     if(response && response.data !== null) {
@@ -91,7 +92,7 @@ const authApi: AuthApiService = {
     useSignUpMutation: function () {
         const mutationFn = async(params: SignUpCredential) => {
             const initConfig: AxiosRequestConfig = {
-                headers: { [REQUEST_HEADER_CONTENT_TYPE_KEY]: REQUEST_CONTENT_TYPE_JSON }
+                headers: { [REQUEST_HEADER_CONTENT_TYPE_KEY]: CONTENT_TYPE_JSON }
             }
 
             const signUpParams: SignUpRequestParams = {
@@ -100,12 +101,12 @@ const authApi: AuthApiService = {
                 enable: true,
                 credentials: [{ type:'password', 
                                 value: params.password, 
-                                temporary: false  }]
+                                temporary: false }]
             }
 
             try {
-                const response = await BaseService({ ...initConfig, 
-                                                        url: '/users', 
+                const response = await BaseService({ ...initConfig,
+                                                        url: authEndpoints.endpoints.signUp,
                                                         data: signUpParams,
                                                         method: 'POST'});
                 if(response && response.status === 201){
@@ -140,7 +141,7 @@ const authApi: AuthApiService = {
                 signoutRequestParams.append(AUTH_REFRESH_TOKEN_KEY, refreshToken);
 
                 const response = await BaseService({ ...authApi.initRequestConfig,
-                                                        url: '/protocol/openid-connect/logout',
+                                                        url: authEndpoints.endpoints.signOut,
                                                         method: 'POST',
                                                         data: signoutRequestParams
                 });

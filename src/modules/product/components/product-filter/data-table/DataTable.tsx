@@ -22,7 +22,7 @@ export const DataTable: React.FC = () => {
                         { productList.map((product: Product) =>
                             (<Table.Tr key={`row_${product.productId}`}>
                                 <Table.Td>{product.name}</Table.Td>
-                                <Table.Td>{product.productNumber}</Table.Td>
+                                <Table.Td className='hidden md:hidden'>{product.productNumber}</Table.Td>
                                 <Table.Td>{product.productModel ? product.productModel?.name : 'Not specified'}</Table.Td>
                                 <Table.Td>{`${appConfig.currency.symbol}${product.listPrice}`}</Table.Td>
                                 <Table.Td><UserPermissionBox permission='product:product:view' 
@@ -35,16 +35,16 @@ export const DataTable: React.FC = () => {
                            <Table.Td>There are no records available.</Table.Td>
                          </Table.Tr>
 
-    return(<div className='w-full xl:w-9/12'>
+    return(<div className='w-full 2xl:w-9/12'>
         { isError && <Alert severity='error' className='mb-3'>{ERROR_MESSAGE_GENERAL_ERROR}</Alert>}
         <Card>
             <LoadingOverlay visible={(isFetching || isLoading) } className={styles.loading} />
-            <Table.ScrollContainer minWidth={750}>
+            <Table.ScrollContainer minWidth={600}>
                 <Table>
                     <Table.Thead>
                         <Table.Tr>
                             <Table.Th>Name</Table.Th>
-                            <Table.Th>Number</Table.Th>
+                            <Table.Th className='hidden md:block'>Number</Table.Th>
                             <Table.Th>Model</Table.Th>
                             <Table.Th>List Price</Table.Th>
                             <Table.Th>Actions</Table.Th>

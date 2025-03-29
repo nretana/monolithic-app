@@ -1,5 +1,6 @@
-import LogoHeader from '@/modules/core/components/template/logo-header/LogoHeader';
+import { LogoHeader } from '@/modules/core/components/template/logo-header/LogoHeader';
 import SideNav from '@/modules/core/components/template/sidenav/SideNav';
+
 import classes from './SideBar.module.css';
 
 export const SideBar = () => {

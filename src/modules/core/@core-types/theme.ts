@@ -1,4 +1,3 @@
-export type Direction = 'ltr' | 'rtl'
 export type Mode = 'light' | 'dark'
 export type NavMode = 'transparent' | 'light' | 'dark' | 'themed'
 export type ControlSize = 'lg' | 'md' | 'sm'

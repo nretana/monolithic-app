@@ -1,7 +1,7 @@
 import React from 'react';
 import type { CommonProps } from '@/modules/core/@core-types/common';
 import { COVER_LAYOUT, SIDE_LAYOUT } from '@/modules/core/constants/app.constant';
-import CoverLayout from './CoverLayout';
+import { CoverLayout } from './cover-layout/CoverLayout';
 import { SideLayout } from './side-layout/SideLayout';
 
 

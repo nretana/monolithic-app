@@ -20,7 +20,7 @@ function useAuth() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const query = useQuery();
-    const { token, signedIn, refreshToken } = useAppSelector((state) => state.auth.session);
+    const { token, signedIn, refreshToken, tokenExpired } = useAppSelector((state) => state.auth.session);
     const signInMutation = useSignInMutation();
     const signUpMutation = useSignUpMutation();
     const signOutMutation = useSignOutMutation();
@@ -141,7 +141,7 @@ function useAuth() {
                 name: '',
                 username: '',
                 email: '',
-                authority: [],
+                authority: []
             })
         )
         navigate(appConfig.unAuthenticatedEntryPath)
@@ -149,6 +149,7 @@ function useAuth() {
 
     return {
         authenticated: token && signedIn,
+        tokenExpired,
         signUp,
         signIn,
         signInSSO,

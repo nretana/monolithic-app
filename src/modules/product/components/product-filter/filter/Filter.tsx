@@ -61,7 +61,7 @@ export const Filter: React.FC = () => {
         filterOptions.endPrice]);
 
     return(<>
-                <form className={clsx(styles['filter-options'], 'w-full', 'xl:w-9/12', 'mb-3')}>
+                <form className={clsx(styles['filter-options'], 'w-full', '2xl:w-9/12', 'mb-3')}>
                     <fieldset className='flex flex-wrap' disabled={(isFetching || isLoading)}>
                         <div className='mr-3'>
                             <TextInput label='Name'

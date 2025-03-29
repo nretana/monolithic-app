@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { useProductFilterContext, 
          FilterOptions } from '../context/ProductFilterContext';
 import { Chip } from '@mantine/core';
@@ -55,7 +55,7 @@ export const Tag: React.FC = () => {
 
     return(<>
             { tagList.length > 0 &&
-            <div className='w-full lg:w-9/12 flex mb-3'>
+            <div className='w-full 2xl:w-9/12 flex mb-3'>
                 { tagList.map((tag, index) => tag.label && 
                                               tag.label.toString().length > 0 && 
                                               <Chip key={`tag_${tag.value}_${index}`}

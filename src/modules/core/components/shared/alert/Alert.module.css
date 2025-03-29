@@ -1,21 +1,46 @@
 
-.mantine-Alert-root {
+.app-Alert-root {
     --mantine-alert-border-style: solid;
     --mantine-alert-border-width: 3px;
     padding: 0;
     background-color: var(--mantine-color-blue-light);
     color: var(--mantine-color-blue-light-color);
 
+    .app-Alert-icon {
+        background: var(--mantine-color-blue-6);
+        background: linear-gradient(135deg, var(--mantine-color-blue-3) 0%, var(--mantine-color-blue-6) 58%);
+        color: var(--mantine-color-white);
+        height: 100%;
+        line-height: normal;
+        width: auto;
+        height: auto;
+        margin:0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .app-Alert-body {
+        padding: 0.5rem 0.5rem;
+        border-right: var(--mantine-alert-border-width)
+                      var(--mantine-alert-border-style)
+                      var(--mantine-color-blue-6);
+    }
+    
+    .app-Alert-message {
+        color: var(--mantine-color-text);
+        font-size: var(--mantine-font-size-xs);
+    }
+
     &.success {
         background-color: var(--mantine-color-green-light);
         color: var(--mantine-color-green-light-color);
 
-        .mantine-Alert-icon {
+        .app-Alert-icon {
             background: var(--mantine-color-lime-7);
             background: linear-gradient(135deg, var(--mantine-color-lime-3) 0%, var(--mantine-color-lime-7) 58%);
         }
 
-        .mantine-Alert-body {
+        .app-Alert-body {
             border-right: var(--mantine-alert-border-width)
                           var(--mantine-alert-border-style)
                           var(--mantine-color-lime-7);
@@ -26,12 +51,12 @@
         background-color: var(--mantine-color-cyan-light);
         color: var(--mantine-color-cyan-light-color);
 
-        .mantine-Alert-icon {
+        .app-Alert-icon {
             background:  var(--mantine-color-cyan-6);
             background: linear-gradient(135deg, var(--mantine-color-cyan-3) 0%, var(--mantine-color-cyan-6) 58%);
         }
 
-        .mantine-Alert-body {
+        .app-Alert-body {
             border-right: var(--mantine-alert-border-width)
                           var(--mantine-alert-border-style)
                           var(--mantine-color-cyan-6);
@@ -42,12 +67,12 @@
         background-color: var(--mantine-color-yellow-light);
         color: var(--mantine-color-yellow-light-color);
 
-        .mantine-Alert-icon {
+        .app-Alert-icon {
             background:  var(--mantine-color-yellow-7);
             background: linear-gradient(135deg,  var(--mantine-color-yellow-4) 0%,  var(--mantine-color-yellow-7) 58%);
         }
 
-        .mantine-Alert-body {
+        .app-Alert-body {
             border-right: var(--mantine-alert-border-width)
                           var(--mantine-alert-border-style)
                           var(--mantine-color-yellow-7);
@@ -55,42 +80,18 @@
     }
 
     &.error {
-        background-color: var(--mantine-color-pink-light);
-        color: var(--mantine-color-pink-light-color);
+        background-color: var(--mantine-color-red-light);
+        color: var(--mantine-color-red-9);
 
-        .mantine-Alert-icon {
+        .app-Alert-icon {
             background: var(--mantine-color-red-8);
-            background: linear-gradient(135deg, var(--mantine-color-red-4) 0%, var(--mantine-color-red-8) 58%);
+            background: linear-gradient(135deg, var(--mantine-color-red-6) 0%, var(--mantine-color-red-7) 58%);
         }
 
-        .mantine-Alert-body {
+        .app-Alert-body {
             border-right: var(--mantine-alert-border-width)
                           var(--mantine-alert-border-style)
                           var(--mantine-color-red-8);
         }
     }
-}
-
-.mantine-Alert-icon {
-    background: var(--mantine-color-blue-6);
-    background: linear-gradient(135deg, var(--mantine-color-blue-3) 0%, var(--mantine-color-blue-6) 58%);
-    color: var(--mantine-color-white);
-    height: 100%;
-    line-height: normal;
-    width: auto;
-    height: auto;
-    margin:0;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-.mantine-Alert-body {
-    padding: 0.5rem 0.5rem;
-    border-right: var(--mantine-alert-border-width)
-                  var(--mantine-alert-border-style)
-                  var(--mantine-color-blue-6);
-}
-
-.mantine-Alert-message {
-    font-size: var(--mantine-font-size-xs);
 }

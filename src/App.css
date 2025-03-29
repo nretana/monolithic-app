@@ -6,3 +6,25 @@
 :where([data-mantine-color-scheme='light']) .m_e615b15f {
     background-color: var(--mantine-color-gray-0);
 }
+
+/*chip*/
+:where([data-mantine-color-scheme='light']) .m_fa109255:not([data-disabled]):where([data-checked]), 
+:where([data-mantine-color-scheme='light']) .m_f7e165c3:not([data-disabled]):where([data-checked]) {
+    background-color: rgb(25, 25, 25);
+    background-image: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: var(--mantine-color-gray-0);
+}
+
+/* tooltips */
+:where([data-mantine-color-scheme='light']) .m_1b3c8819 {
+    background-color: rgb(25, 25, 25);
+    background-image: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: var(--mantine-color-gray-0);
+}
+
+/*slider mini tooltip*/
+:where([data-mantine-color-scheme='light']) .m_a8645c2 .m_c9357328 {
+    background-color: rgb(25, 25, 25);
+    background-image: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    color: var(--mantine-color-gray-0);
+}

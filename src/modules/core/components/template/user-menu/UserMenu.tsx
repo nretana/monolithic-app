@@ -1,24 +1,25 @@
 import cx from 'clsx';
 import { Menu, Text, rem } from '@mantine/core';
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
-import { Avatar } from '@mantine/core';
+import { Avatar, useMantineTheme } from '@mantine/core';
 import useAuth from '@/modules/auth/hooks/useAuth';
 import { useAppSelector } from '@/modules/core/store/hook';
 import { notifications } from '@mantine/notifications';
+import { systemNotifications } from '@/modules/core/configs/notifications.config';
+
 import classes from './UserMenu.module.css';
+
 
 const UserMenu = () => {
 
+  const theme = useMantineTheme();
   const { signOut } = useAuth();
   const currentUser = useAppSelector(state => state.auth.user);
 
   const onSignOut = async() => {
     const response = await signOut();
     if (response?.status === 'failed'){
-      notifications.show({ title: 'Error', 
-                           message: `We couldn't sign out from the app.`,
-                           color: 'red',
-                           autoClose: false });
+      notifications.show(systemNotifications.signOutSession);
     }
   }
 
@@ -26,7 +27,7 @@ const UserMenu = () => {
     <Menu width={250}>
       <Menu.Target>
         <div className={cx(classes['user-menu-target'], 'flex items-stretch cursor-pointer px-2 p-2 h-full')}>
-          <Avatar color='orange' size='lg'>
+          <Avatar color={theme.primaryColor} size='lg'>
             <IconUser />
           </Avatar>
           <div className='ps-2 flex justify-center flex-col'>

@@ -1,27 +1,24 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import type { Product, ProductWithPagination } from '@/modules/product/@product-types/product';
 import type {ProductQueryParams } from '@/modules/product/@product-types/product.api';
-import { API_BASE_URL } from '@/modules/core/constants/api.constant';
 import { queryStringParams } from '@/modules/core/utils/queryStringParams';
 import { axiosBaseQuery } from '@/modules/core/store/services/RtkQueryService';
+import { productEndpoints } from '@/modules/product/configs/productEndpoints.config';
 
 
 export const ProductService = createApi({
     reducerPath: 'productApi',
     baseQuery: axiosBaseQuery({ 
-        baseURL: API_BASE_URL, 
+        baseURL: productEndpoints.baseUrl, 
         timeout: 60000,
-        headers: {
-            Accept: 'application/json',
-            "Content-Type": 'application/json'
-        }
+        headers: productEndpoints.headers
     }),
     tagTypes: ['Product'],
     endpoints: (builder) => ({
         getProducts: builder.query<ProductWithPagination, ProductQueryParams>({
             query: (params) => {
                 const queryParams = queryStringParams(params);
-                return ({ url: '/product', method: 'GET', params: queryParams });
+                return ({ url: productEndpoints.endpoints.getProducts, method: 'GET', params: queryParams });
             },
             transformResponse: (response: any, meta: any) => {
                 const paginationHeader = meta?.headers['x-pagination'] ?? '{}';
@@ -31,19 +28,19 @@ export const ProductService = createApi({
         }),
         getProduct: builder.query<Product, string>({
             query: (productId) => {
-                return { url: `/product/${productId}`, method: 'GET' }
+                return { url: productEndpoints.endpoints.getProduct(productId), method: 'GET' }
             }
         }),
         addProduct: builder.mutation<any, any>({
             query: (body) => ({
-                url: '/product',
+                url: productEndpoints.endpoints.addProduct,
                 method: 'POST',
                 body: JSON.stringify(body)
             })
         }),
         deleteProduct: builder.mutation<unknown, string>({
             query: (productId) => ({
-                url: `/product/${productId}`,
+                url: productEndpoints.endpoints.getProduct(productId),
                 method: 'DELETE'
             })
         })

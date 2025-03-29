@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'clsx';
 import { CommonProps } from '@/modules/core/@core-types/common';
-import { AlertProps as BaseAlertProps , Alert as BaseAlert } from '@mantine/core';
+import { AlertProps as MantineAlertProps , Alert as MantineAlert } from '@mantine/core';
 import { IconAlertTriangleFilled, 
          IconCircleCheckFilled,
          IconCircleXFilled,
@@ -9,7 +9,7 @@ import { IconAlertTriangleFilled,
 import classes from './Alert.module.css';
 
 
-type AlertProps = BaseAlertProps & CommonProps & {
+type AlertProps = MantineAlertProps & CommonProps & {
     severity?: 'success' | 'info' | 'warning' | 'error'
 }; 
 
@@ -29,12 +29,12 @@ const AlertIcon: React.FC<{ severity?: 'success' | 'info' | 'warning' | 'error'}
 
 export const Alert: React.FC<AlertProps> = (props) => {
 
-    return(<BaseAlert {...props}
-                      icon={<AlertIcon severity={props.severity} />}
-                      classNames={{ root: cx(classes['mantine-Alert-root'], props.severity ? classes[props.severity] : ''),
-                                    icon: classes['mantine-Alert-icon'], 
-                                    body: classes['mantine-Alert-body'],
-                                    message: classes['mantine-Alert-message'] }}>
+    return(<MantineAlert {...props}
+                         icon={<AlertIcon severity={props.severity} />}
+                         classNames={{ root: cx(classes['app-Alert-root'], props.severity ? classes[props.severity] : ''),
+                                       icon: classes['app-Alert-icon'], 
+                                       body: classes['app-Alert-body'],
+                                       message: classes['app-Alert-message'] }}>
                 {props.children}
-           </BaseAlert>)
+           </MantineAlert>)
 }

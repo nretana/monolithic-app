@@ -1,4 +1,6 @@
 
 .logo-header {
-   height: 55px;
+    img {
+      height: 45px;
+    }
 }
