@@ -27,10 +27,10 @@ dayjs.extend(relativeTime);
   console.log(id, 'phase:', phase, 'actualDuration:', actualDuration, 'baseDuration: ',baseDuration);
 } */
 
-/* if(appConfig.enableMock){ //&& process.env.NODE_ENV === 'development'){
+if(appConfig.enableMock){ //&& process.env.NODE_ENV === 'development'){
   const server = mockServer();
   server.start();
-} */
+}
 
 {/* <Profiler id="App" onRender={onRenderprofiler}> */}
 /* </Profiler> */
