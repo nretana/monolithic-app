@@ -22,7 +22,7 @@ export const entityManagementNavigationRoutes: NavigationTree[] = [
         title: 'Entity Management',
         icon: IconUsers,
         type: SINGLE_MENU_ITEM,
-        authority: [ADMIN, USER],
+        authority: [ADMIN],
         subMenu: []
     }
 ]

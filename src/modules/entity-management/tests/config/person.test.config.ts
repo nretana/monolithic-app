@@ -3,7 +3,7 @@ import { AppMockTestConfig } from '@/modules/core/@core-types/app-test';
 import { EntityManagementFeatures, EntityManagementModule } from '@/modules/entity-management/@entity-types/entity-management-module';
 import { PersonTestCases } from '@/modules/entity-management/@entity-types/person-test';
 import { getJsonResponse } from '@/modules/core/tests/utils/getJsonResponse';
-import { personEndpoints } from '@/modules/entity-management/configs/entityManagementEndpoints.config';
+import { personEndpoints } from '@/modules/entity-management/configs/entityManagement.endpoints.config';
 import { PERSON_PAGINATION_HEADER } from '@/modules/entity-management/tests/constants/person.test.constant';
 
 

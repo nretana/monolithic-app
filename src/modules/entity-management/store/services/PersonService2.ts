@@ -3,7 +3,7 @@ import type { Person, PersonWithPagination } from '@/modules/entity-management/@
 import type { PersonQueryParams } from '@/modules/entity-management/@entity-types/person.api';
 import { queryStringParams } from '@/modules/core/utils/queryStringParams';
 import { axiosBaseQuery } from '@/modules/core/store/services/RtkQueryService';
-import { personEndpoints } from '@/modules/entity-management/configs/entityManagementEndpoints.config';
+import { personEndpoints } from '@/modules/entity-management/configs/entityManagement.endpoints.config';
 
 
 export const PersonService2 = createApi({

@@ -3,7 +3,7 @@ import type { Product, ProductWithPagination } from '@/modules/product/@product-
 import type {ProductQueryParams } from '@/modules/product/@product-types/product.api';
 import { queryStringParams } from '@/modules/core/utils/queryStringParams';
 import { axiosBaseQuery } from '@/modules/core/store/services/RtkQueryService';
-import { productEndpoints } from '@/modules/product/configs/productEndpoints.config';
+import { productEndpoints } from '@/modules/product/configs/product.endpoints.config';
 
 
 export const ProductService = createApi({

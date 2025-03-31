@@ -1,6 +1,6 @@
 import { delay, http, HttpResponse } from 'msw';
 import jsonResponse from '../mocks/product-responses/product-success-response.json';
-import { productEndpoints } from '@/modules/product/configs/productEndpoints.config';
+import { productEndpoints } from '@/modules/product/configs/product.endpoints.config';
 import { PRODUCT_PAGINATION_HEADER } from '@/modules/product/tests/constants/product.test.constant';
 
 

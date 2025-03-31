@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { ScreenSize } from '@/modules/core/@core-types/theme';
 import { useMantineTheme, px } from '@mantine/core';
 import throttle from 'lodash/throttle'
-
+import { SMALL_SIZE, MEDIUM_SIZE, LARGE_SIZE } from '@/modules/core/constants/theme.constant';
 
 export const useResponsive = () => {
 
@@ -19,15 +19,17 @@ export const useResponsive = () => {
     const getCurrentScreenSize = () => {
         let screenBreakpoint = window.innerWidth;
         if ((screenBreakpoint <= screenSizes.xs) || (screenBreakpoint <= screenSizes.sm)) {
-            setCurrentScreenSize("Small");
+            setCurrentScreenSize(SMALL_SIZE);
         }
         else if (screenBreakpoint <=  screenSizes.md){
-            setCurrentScreenSize("Medium");
+            setCurrentScreenSize(MEDIUM_SIZE);
         }
         else {
-            setCurrentScreenSize("Large");
+            setCurrentScreenSize(LARGE_SIZE);
         }
     }
+
+    useEffect(() => getCurrentScreenSize(), []);
 
     useEffect(() => {
         window.addEventListener('resize', throttle(getCurrentScreenSize, 200));

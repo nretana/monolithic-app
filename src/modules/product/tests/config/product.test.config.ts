@@ -4,7 +4,7 @@ import { ProductFeatures, ProductModule } from '../../@product-types/product-mod
 import { ProductTestCases } from '@/modules/product/@product-types/product-test';
 import { PRODUCT_PAGINATION_HEADER } from '../constants/product.test.constant';
 import { getJsonResponse } from '@/modules/core/tests/utils/getJsonResponse';
-import { productEndpoints } from '@/modules/product/configs/productEndpoints.config';
+import { productEndpoints } from '@/modules/product/configs/product.endpoints.config';
 
 
 //module => feature -> use-case

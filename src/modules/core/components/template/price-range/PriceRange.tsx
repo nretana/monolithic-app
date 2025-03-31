@@ -21,7 +21,7 @@ export const PriceRange: React.FC<PriceRangeProps> = (props) => {
     const [currentPriceRange, setCurrentPriceRange] = useState<string>(`$${props.value[0]} - $${props.value[1]}`);
     const [startPrice, endPrice] = value;
 
-    const updatePriceInputText = useCallback(() => setCurrentPriceRange(priceRangeFormat(startPrice, endPrice)), []);
+    const updatePriceInputText = useCallback(() => setCurrentPriceRange(priceRangeFormat(startPrice, endPrice)), [startPrice, endPrice]);
 
     const onClosePopover = () => { 
         updatePriceInputText();

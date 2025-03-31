@@ -17,7 +17,7 @@ import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessa
 import { ERROR_MESSAGE_INVALID_CREDENTIALS, 
          ERROR_MESSAGE_INVALID_TOKEN } from '@/modules/auth/constants/auth.errormessages.constant';
 import BaseService from '@/modules/core/store/services/BaseService';
-import { authEndpoints } from '../../config/auth.endpoints.config';
+import { authEndpoints } from '../../configs/auth.endpoints.config';
 
 
 type AuthApiService = {

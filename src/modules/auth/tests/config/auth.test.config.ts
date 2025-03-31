@@ -2,7 +2,7 @@ import { http, HttpResponse } from 'msw';
 import { AppMockTestConfig } from '@/modules/core/@core-types/app-test';
 import { AuthModule, AuthFeatures } from '@/modules/auth/@auth-types/auth-module';
 import { AuthTestCases } from '@/modules/auth/@auth-types/auth-test';
-import { authEndpoints } from '@/modules/auth/config/auth.endpoints.config';
+import { authEndpoints } from '@/modules/auth/configs/auth.endpoints.config';
 import { getJsonResponse } from '@/modules/core/tests/utils/getJsonResponse';
 
 

@@ -37,24 +37,26 @@ export const DataTable: React.FC = () => {
                            <Table.Td>There are no records available.</Table.Td>
                          </Table.Tr>
 
-    return(<div className='w-full lg:w-9/12'>
+    return(<div className='w-full 2xl:w-9/12'>
         { isError && <Alert severity='error' className='mb-3'>{ERROR_MESSAGE_GENERAL_ERROR}</Alert>}
         <Card>
             <LoadingOverlay visible={(isFetching || isLoading) } className={styles.loading} />
-            <Table>
-                <Table.Thead>
-                    <Table.Tr>
-                        <Table.Th>Full Name</Table.Th>
-                        <Table.Th>Email Address</Table.Th>
-                        <Table.Th>Type</Table.Th>
-                        <Table.Th>Principal Credit Card</Table.Th>
-                        <Table.Th>Actions</Table.Th>
-                    </Table.Tr>
-                </Table.Thead>
-                <Table.Tbody>
-                    {(personList.length > 0) ? tableRows : noRecordsRow }
-                </Table.Tbody>
-            </Table>
+            <Table.ScrollContainer minWidth={600}>
+                <Table>
+                    <Table.Thead>
+                        <Table.Tr>
+                            <Table.Th>Full Name</Table.Th>
+                            <Table.Th>Email Address</Table.Th>
+                            <Table.Th>Type</Table.Th>
+                            <Table.Th>Principal Credit Card</Table.Th>
+                            <Table.Th>Actions</Table.Th>
+                        </Table.Tr>
+                    </Table.Thead>
+                    <Table.Tbody>
+                        {(personList.length > 0) ? tableRows : noRecordsRow }
+                    </Table.Tbody>
+                </Table>
+            </Table.ScrollContainer>
         </Card>
     </div>)
 }

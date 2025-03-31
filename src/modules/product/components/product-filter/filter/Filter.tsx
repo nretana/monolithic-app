@@ -45,15 +45,10 @@ export const Filter: React.FC = () => {
         setFilterOptions('endPrice', endPrice);
     }, []);
 
-    const onResetPriceRange = useCallback(() => onSetPriceRange([MIN_PRICE, MAX_PRICE]), []);
-
     useEffect(() => { //runs when removing tags
         productFilterForm.setFieldValue('name', filterOptions.name);
         productFilterForm.setFieldValue('productNumber', filterOptions.productNumber);
         productFilterForm.setFieldValue('productModel', filterOptions.productModel);
-        //productFilterForm.setFieldValue('startPrice', MIN_PRICE);
-        //productFilterForm.setFieldValue('endPrice', MAX_PRICE);
-
     }, [filterOptions.name,
         filterOptions.productModel,
         filterOptions.productNumber,
@@ -89,8 +84,7 @@ export const Filter: React.FC = () => {
                                         min={MIN_PRICE}
                                         max={MAX_PRICE}
                                         value={[filterOptions.startPrice, filterOptions.endPrice]}
-                                        width={185} 
-                                        onReset={onResetPriceRange}
+                                        width={185}
                                         onClose={onSetPriceRange} />
                         </div>
                     </fieldset>

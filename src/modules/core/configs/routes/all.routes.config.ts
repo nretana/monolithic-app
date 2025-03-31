@@ -1,5 +1,5 @@
 import { appRoutes } from './app.routes.config';
-import { authRoutes } from '@/modules/auth/config/auth.routes.config';
+import { authRoutes } from '@/modules/auth/configs/auth.routes.config';
 import { otherRoutes, errorRoutes as errRoutes } from './other.routes.config';
 
 export const protectedRoutes = [ ...appRoutes ];

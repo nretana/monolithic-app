@@ -44,7 +44,7 @@ export const Filter: React.FC = () => {
     }, [filterOptions.firstName, filterOptions.lastName, filterOptions.personType]);
 
     return(<>
-                <form className={clsx(styles['filter-options'], 'w-full', 'lg:w-9/12 mb-3')}>
+                <form className={clsx(styles['filter-options'], 'w-full', '2xl:w-9/12 mb-3')}>
                     <fieldset className='flex' disabled={(isFetching || isLoading)}>
                         <div className='mr-2'>
                             <TextInput label='Name' 
@@ -59,12 +59,12 @@ export const Filter: React.FC = () => {
                                     onKeyDown={onKeyDownLastName} />
                         </div>
                         <div className='mr-2'>
-                        <Select label='Type'
-                                placeholder='Person type'
-                                key={profileFilterForm.key('personType')} 
-                                data={PERSON_TYPE_LIST}
-                                {...profileFilterForm.getInputProps('personType')}
-                                onChange={onChangePersonType} />
+                            <Select label='Type'
+                                    placeholder='Person type'
+                                    key={profileFilterForm.key('personType')} 
+                                    data={PERSON_TYPE_LIST}
+                                    {...profileFilterForm.getInputProps('personType')}
+                                    onChange={onChangePersonType} />
                         </div>
                     </fieldset>
                 </form>

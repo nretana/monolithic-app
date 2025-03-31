@@ -22,7 +22,7 @@ export const DataTable: React.FC = () => {
                         { productList.map((product: Product) =>
                             (<Table.Tr key={`row_${product.productId}`}>
                                 <Table.Td>{product.name}</Table.Td>
-                                <Table.Td className='hidden md:hidden'>{product.productNumber}</Table.Td>
+                                <Table.Td className='hidden md:block'>{product.productNumber}</Table.Td>
                                 <Table.Td>{product.productModel ? product.productModel?.name : 'Not specified'}</Table.Td>
                                 <Table.Td>{`${appConfig.currency.symbol}${product.listPrice}`}</Table.Td>
                                 <Table.Td><UserPermissionBox permission='product:product:view' 

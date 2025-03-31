@@ -8,7 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { RouterProvider } from 'react-router-dom';
 import { theme } from '@/modules/core/configs/theme.config';
 import { appConfig } from './modules/core/configs/app.config';
-import { ssoConfig } from './modules/auth/config/sso.config';
+import { ssoConfig } from './modules/auth/configs/sso.config';
 import { allRoutes } from '@/modules/core/components/route/AppRouter';
 import store, { persistor } from '@/modules/core/store/index';
 import { Notifications } from '@mantine/notifications';
