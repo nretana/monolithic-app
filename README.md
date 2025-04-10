@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# Monolithic App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Template for scalaling a monolithic application
 
-Currently, two official plugins are available:
+## Features
+* Auth module to connect to Keycloak Identity Server
+* Token authentication
+* Roles and permissions
+* Sign In by credentials and by identity providers (Google and Github)
+* API consumption
+* Push notifications
+* Filter data table
+* API Mocks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Preview
 
-- Configure the top-level `parserOptions` property like this:
+<br />
+<div align="center">
+No preview.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+</div>
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Tech Stack
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Frontend
+* [![VSCode][VSCode]][VSCode-url]
+* [![Mantine][Mantine]][Mantine-url]
+* [![CSSModules][CSSModules]][CSSModules-url]
+* [![ReactJS][ReactJS]][ReactJS-url]
+* [![Redux][Redux]][Redux-url]
+* [![Typescript][Typescript]][Typescript-url]
+
+
+### Providers
+* [![Keycloak]][Keycloak-url]
+
+### Deployment
+* [![YAML][YAML]][YAML-url]
+
+
+## Status
+Work in progress
+
+## Acknowledgments
+* [Img Shields](https://shields.io)
+* [Simple Badges](https://badges.pages.dev)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[VSCode]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[VSCode-url]: https://code.visualstudio.com
+[Mantine]: https://img.shields.io/badge/Mantine-339AF0?logo=mantine&logoColor=fff&style=for-the-badge
+[Mantine-url]: https://mantine.dev
+[CSSModules]: https://img.shields.io/badge/CSS%20Modules-000?logo=cssmodules&logoColor=fff&style=for-the-badge
+[CSSModules-url]: https://developer.mozilla.org/en-US
+[ReactJS]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[ReactJS-url]: https://reactjs.org
+[Redux]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
+[Redux-url]: https://redux.js.org
+[TypeScript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white 
+[TypeScript-url]: https://www.typescriptlang.org
+[Keycloak]: https://img.shields.io/badge/Keycloak-4D4D4D?logo=keycloak&logoColor=fff&style=for-the-badge
+[Keycloak-url]: https://www.keycloak.org
+[YAML]: https://img.shields.io/badge/yaml-%23ffffff.svg?style=for-the-badge&logo=yaml&logoColor=151515
+[YAML-url]: https://yaml.org
