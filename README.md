@@ -1,6 +1,6 @@
 # Monolithic App
 
-Template for scalaling a monolithic application
+Template for scaling a monolithic application
 
 ## Features
 * Auth module to connect to Keycloak Identity Server
