@@ -7,7 +7,7 @@ import { useProductFilterContext, GetProductsQueryHookResult } from '../context/
 import { Card, Button, Table } from '@mantine/core';
 import { Alert } from '@/modules/core/components/shared/alert/Alert';
 import { LoadingOverlay } from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
-import { UserPermissionBox } from '@/modules/core/components/shared/permission-box/UserPermissionBox';
+import { UserPermissionValidator} from '@/modules/core/components/shared/permission-validator/UserPermissionValidator';
 
 import styles from './DataTable.module.css';
 
@@ -25,8 +25,8 @@ export const DataTable: React.FC = () => {
                                 <Table.Td className='hidden md:block'>{product.productNumber}</Table.Td>
                                 <Table.Td>{product.productModel ? product.productModel?.name : 'Not specified'}</Table.Td>
                                 <Table.Td>{`${appConfig.currency.symbol}${product.listPrice}`}</Table.Td>
-                                <Table.Td><UserPermissionBox permission='product:product:view' 
-                                                            render={() => <Button type='button'>View</Button>} />
+                                <Table.Td><UserPermissionValidator permission='product:product:view' 
+                                                                   render={() => <Button type='button'>View</Button>} />
                                 </Table.Td>
                             </Table.Tr>)) }
                       </>

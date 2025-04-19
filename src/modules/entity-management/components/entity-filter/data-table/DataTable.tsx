@@ -6,7 +6,7 @@ import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessa
 import { Card, Button, Table } from '@mantine/core';
 import { Alert } from '@/modules/core/components/shared/alert/Alert';
 import { LoadingOverlay } from '@/modules/core/components/shared/loading-overlay/LoadingOverlay';
-import { UserPermissionBox } from '@/modules/core/components/shared/permission-box/UserPermissionBox';
+import { UserPermissionValidator } from '@/modules/core/components/shared/permission-validator/UserPermissionValidator';
 
 import styles from './DataTable.module.css';
 
@@ -27,8 +27,8 @@ export const DataTable: React.FC = () => {
                                 </Table.Td>
                                 <Table.Td>{person.personType}</Table.Td>
                                 <Table.Td>*****4567</Table.Td>
-                                <Table.Td><UserPermissionBox permission='entity-management:people:view' 
-                                                            render={() => <Button type='button'>View</Button>} />
+                                <Table.Td><UserPermissionValidator permission='entity-management:people:view' 
+                                                                   render={() => <Button type='button'>View</Button>} />
                                 </Table.Td>
                             </Table.Tr>)) }
                       </>

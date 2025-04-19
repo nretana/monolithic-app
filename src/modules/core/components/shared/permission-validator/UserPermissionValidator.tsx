@@ -3,14 +3,14 @@ import { ModulePermission, ModuleRights } from '@/modules/core/@core-types/permi
 import { USER_PERMISSIONS } from '@/modules/core/constants/app.constant';
 
 
-type UserPermissionBoxProps = {
+type UserPermissionValidatorProps = {
     permission: ModulePermission,
     render: () => JSX.Element,
     permissionDeniedRender?: () => JSX.Element
 }
 
 
-export const UserPermissionBox: React.FC<UserPermissionBoxProps> = (props) => {
+export const UserPermissionValidator: React.FC<UserPermissionValidatorProps> = (props) => {
 
     const permission = props.permission as ModulePermission;
     const [module, feature, userRight] = permission.split(':');
