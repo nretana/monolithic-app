@@ -1,13 +1,18 @@
 import { Title } from '@mantine/core';
 import EntityManagement from '@/modules/entity-management/components/EntityManagement';
 
-
 const EntityManagementView = () => {
-
-    return(<section className='relative h-full'>
-        <Title order={2} className='mb-3'>Dashboard</Title>
+  return (
+    <>
+      <title> Mono App | Entity Management</title>
+      <section className='relative h-full'>
+        <Title order={2} className='mb-3'>
+          Dashboard
+        </Title>
         <EntityManagement />
-    </section>)
-}
+      </section>
+    </>
+  );
+};
 
-export default EntityManagementView
+export default EntityManagementView;

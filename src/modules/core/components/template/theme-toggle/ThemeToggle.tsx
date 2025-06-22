@@ -11,7 +11,7 @@ const ThemeToggle = () => {
   return (
     <IconButton icon={(computedColorScheme === MODE_LIGHT ? IconMoon : IconSun )}
                 ariaLabel={(computedColorScheme === MODE_LIGHT ? 'Turn off light theme' : 'Turn on light theme')}
-                className='me-2'
+                className='me-3'
                 onClick={() => setColorScheme(computedColorScheme === MODE_LIGHT ? MODE_DARK : MODE_LIGHT)} />
   );
 }

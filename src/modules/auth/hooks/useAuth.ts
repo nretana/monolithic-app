@@ -119,7 +119,6 @@ function useAuth() {
 
     const afterSignIn = (token: string, refreshToken: string, isSignInSSO?: boolean) => {
         const tokenInfo = jwtDecode<JWUserToken>(token);
-        console.log(tokenInfo);
         const userInfo: UserInfo = {
             avatar: tokenInfo?.picture || '',
             name: tokenInfo?.name || '',

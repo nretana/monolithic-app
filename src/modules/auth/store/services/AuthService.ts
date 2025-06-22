@@ -8,9 +8,11 @@ import {  CONTENT_TYPE_URL_ENCODED,
           CONTENT_TYPE_JSON } from '@/modules/core/constants/api.constant';
 import { AUTH_API_BASE_URL,
          AUTH_GRANT_TYPE_KEY, 
+         AUTH_SCOPE_KEY,
          AUTH_CLIENT_ID_KEY,
          AUTH_REFRESH_TOKEN_KEY, 
-         AUTH_CLIENT_ID_PARAM, 
+         AUTH_CLIENT_ID_PARAM,
+         AUTH_SCOPE_PARAM,
          AUTH_PASSWORD_GRANT_TYPE_PARAM } from '@/modules/auth/constants/auth.api.constant';
 import { ERROR_CODE_BAD_REQUEST } from '@/modules/auth/constants/auth.errorcodes.constant';
 import { ERROR_MESSAGE_GENERAL_ERROR } from '@/modules/core/constants/errormessages.constant';
@@ -60,6 +62,7 @@ const authApi: AuthApiService = {
                     signInParams.append("password", params?.password);
                     signInParams.append(AUTH_GRANT_TYPE_KEY, AUTH_PASSWORD_GRANT_TYPE_PARAM);
                     signInParams.append(AUTH_CLIENT_ID_KEY, AUTH_CLIENT_ID_PARAM);
+                    signInParams.append(AUTH_SCOPE_KEY, AUTH_SCOPE_PARAM);
 
                     const response = await BaseService({ ...authApi.initRequestConfig,
                                                             url: authEndpoints.endpoints.signIn,

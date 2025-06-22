@@ -1,4 +1,15 @@
 
+.user-menu-target {
+    background: transparent;
+    text-align: left;
+    color: var(--input-color);
+
+    &:hover {
+        background: transparent;
+        color: var(--input-color);
+    }
+}
+
 .user-menu {
     .icon {
         width: var(--mantine-font-size-md);

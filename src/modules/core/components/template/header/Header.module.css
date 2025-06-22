@@ -4,5 +4,5 @@
     background-color: light-dark(
     var(--mantine-color-gray-0),
     var(--mantine-color-dark-6));
-    height: 4rem;
+    height: 4.5rem;
 }

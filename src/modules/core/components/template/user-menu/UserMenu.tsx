@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import { Menu, Text, rem } from '@mantine/core';
+import { Button, Menu, Text, rem } from '@mantine/core';
 import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
 import { Avatar, useMantineTheme } from '@mantine/core';
 import useAuth from '@/modules/auth/hooks/useAuth';
@@ -24,9 +24,9 @@ const UserMenu = () => {
   }
 
   return (
-    <Menu width={250}>
+    <Menu width={250} menuItemTabIndex={0} trigger='click'>
       <Menu.Target>
-        <div className={cx(classes['user-menu-target'], 'flex items-stretch cursor-pointer px-2 p-2 h-full')}>
+        <Button className={cx(classes['user-menu-target'], 'flex items-stretch cursor-pointer p-0 mx-0 my-2 h-full')}>
           <Avatar color={theme.primaryColor} size='lg'>
             <IconUser />
           </Avatar>
@@ -40,7 +40,7 @@ const UserMenu = () => {
               </Text>
             </div>
           </div>
-        </div>
+        </Button>
       </Menu.Target>
       <Menu.Dropdown className={classes['user-menu']}>
         <Menu.Item leftSection={<IconSettings className={classes['icon']} />}>Settings</Menu.Item>
