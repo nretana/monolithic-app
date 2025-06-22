@@ -33,7 +33,7 @@ const NotificationToggle: React.FC<NotificationToggleProps> = forwardRef<
   return (
     <>
       {props.isNewMessage || props.isUnreadNotifications ? (
-        <Indicator inline processing color='red' size={12} className='me-2'>
+        <Indicator inline processing color='red' size={12} className='me-3'>
           <IconButton
             icon={IconBell}
             ariaLabel='Show notification menu'
@@ -47,6 +47,7 @@ const NotificationToggle: React.FC<NotificationToggleProps> = forwardRef<
           ariaLabel='Show notification menu'
           ref={ref}
           {...props}
+          className='me-3'
         />
       )}{' '}
     </>
@@ -109,7 +110,7 @@ export const NotificationMenu = () => {
   return (
     <Popover width={350} withArrow={false}>
       <Popover.Target>
-        <NotificationToggle isUnreadNotifications={unreadNotifications > 0} className='me-3' />
+        <NotificationToggle isUnreadNotifications={unreadNotifications > 0} />
       </Popover.Target>
       <Popover.Dropdown className={classes['notification-menu']}>
         <Text size='xs' fw={500} className={classes['notification-menu-label']}>
